@@ -1,0 +1,347 @@
+/* =========================
+   PREMIUM WISH BUTTON
+========================= */
+
+.wishBtn{
+
+position:fixed;
+
+right:15px;
+
+bottom:140px;
+
+width:10px;
+
+height:10px;
+
+border:none;
+
+border-radius:50%;
+
+background:rgba(212,175,55,.95);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:25px;
+
+cursor:pointer;
+
+z-index:9999;
+
+box-shadow:
+0 8px 20px rgba(0,0,0,.35),
+0 0 15px rgba(212,175,55,.45);
+
+transition:all .3s ease;
+
+}
+
+.wishBtn:hover{
+
+transform:translateY(-3px) scale(1.08);
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.4),
+0 0 25px rgba(212,175,55,.7);
+
+}
+
+.wishBtn:active{
+
+transform:scale(.95);
+
+}
+
+.wishBtn:hover{
+
+transform:scale(1.08);
+
+box-shadow:0 0 30px rgba(212,175,55,.8);
+
+}
+
+/* =========================
+   WISH POPUP
+========================= */
+
+#wishPopup{
+
+position:fixed;
+
+right:20px;
+
+bottom:210px;
+
+display:none;
+
+z-index:10000;
+
+animation:wishOpen .25s ease;
+
+}
+
+/* =========================
+   POPUP BOX
+========================= */
+
+.wishBox{
+
+position:relative;
+
+width:330px;
+
+padding:20px;
+
+border-radius:18px;
+
+background:rgba(18,18,18,.96);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(212,175,55,.45);
+
+box-shadow:
+
+0 15px 40px rgba(0,0,0,.45),
+
+0 0 20px rgba(212,175,55,.18);
+
+}
+
+/* Arrow */
+
+.wishBox::after{
+
+content:"";
+
+position:absolute;
+
+right:22px;
+
+bottom:-9px;
+
+width:18px;
+
+height:18px;
+
+background:rgba(18,18,18,.96);
+
+border-right:1px solid rgba(212,175,55,.45);
+
+border-bottom:1px solid rgba(212,175,55,.45);
+
+transform:rotate(45deg);
+
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.wishHeader{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:18px;
+
+}
+
+.wishHeader h2{
+
+margin:0;
+
+font-size:22px;
+
+color:#d4af37;
+
+}
+
+#closeWish{
+
+background:none;
+
+border:none;
+
+color:#fff;
+
+font-size:22px;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+#closeWish:hover{
+
+color:#d4af37;
+
+transform:rotate(90deg);
+
+}
+
+/* =========================
+   LABEL
+========================= */
+
+.wishBox label{
+
+display:block;
+
+margin:14px 0 6px;
+
+color:#fff;
+
+font-size:14px;
+
+}
+
+/* =========================
+   INPUT
+========================= */
+
+.wishBox input,
+.wishBox textarea{
+
+width:100%;
+
+padding:12px 14px;
+
+border-radius:10px;
+
+border:1px solid #333;
+
+background:#222;
+
+color:#fff;
+
+font-size:15px;
+
+outline:none;
+
+transition:.25s;
+
+}
+
+.wishBox input:focus,
+.wishBox textarea:focus{
+
+border-color:#d4af37;
+
+box-shadow:0 0 12px rgba(212,175,55,.35);
+
+}
+
+.wishBox textarea{
+
+height:110px;
+
+resize:none;
+
+}
+
+/* =========================
+   SEND BUTTON
+========================= */
+
+.sendWishBtn{
+
+width:100%;
+
+margin-top:20px;
+
+padding:14px;
+
+border:none;
+
+border-radius:12px;
+
+background:#25D366;
+
+color:#fff;
+
+font-size:16px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.sendWishBtn:hover{
+
+transform:translateY(-2px);
+
+box-shadow:0 8px 20px rgba(37,211,102,.35);
+
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes wishOpen{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px) scale(.95);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0) scale(1);
+
+}
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+.wishBtn{
+
+right:15px;
+
+bottom:140px;
+
+width:10px;
+
+height:10px;
+
+font-size:26px;
+
+}
+
+#wishPopup{
+
+right:15px;
+
+bottom:185px;
+
+}
+
+.wishBox{
+
+width:290px;
+
+}
+
+}

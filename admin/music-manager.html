@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Music Manager</title>
+
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="apple-touch-icon" href="../favicon.png">
+
+<link rel="stylesheet" href="admin.css">
+
+</head>
+
+
+<body>
+
+
+<div class="musicPage">
+
+
+<div class="musicContainer">
+
+
+
+<h2 id="customerInfo">
+Loading...
+</h2>
+
+
+
+<div class="musicHeader">
+
+<h1>
+🎵 Music Manager V4
+</h1>
+
+</div>
+
+
+
+
+<!-- BACKGROUND MUSIC -->
+
+<div class="musicBox">
+
+
+<h2>
+🎵 Background Music
+</h2>
+
+
+<input
+type="file"
+id="bgMusicFile"
+accept="audio/*">
+
+
+
+<button
+id="uploadBgBtn"
+class="primaryBtn">
+
+☁ Upload Background Music
+
+</button>
+
+
+
+<audio
+id="bgPreview"
+controls
+style="display:none;">
+
+</audio>
+
+
+
+<button
+id="deleteBgBtn"
+class="logoutBtn"
+style="display:none;">
+
+🗑 Delete Background Music
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+<!-- BELL MUSIC -->
+
+
+<div class="musicBox">
+
+
+<h2>
+🔔 Door Bell Music
+</h2>
+
+
+
+<input
+type="file"
+id="bellMusicFile"
+accept="audio/*">
+
+
+
+<button
+id="uploadBellBtn"
+class="primaryBtn">
+
+☁ Upload Bell Music
+
+</button>
+
+
+
+<audio
+id="bellPreview"
+controls
+style="display:none;">
+
+</audio>
+
+
+
+<button
+id="deleteBellBtn"
+class="logoutBtn"
+style="display:none;">
+
+🗑 Delete Bell Music
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- VOICE OVER -->
+
+
+<div class="musicBox">
+
+
+<h2>
+🙏 AI Voice Over
+</h2>
+
+
+
+<input
+type="file"
+id="voiceFile"
+accept="audio/*">
+
+
+
+<button
+id="uploadVoiceBtn"
+class="primaryBtn">
+
+☁ Upload Voice Over
+
+</button>
+
+
+
+<audio
+id="voicePreview"
+controls
+style="display:none;">
+
+</audio>
+
+
+
+<button
+id="deleteVoiceBtn"
+class="logoutBtn"
+style="display:none;">
+
+🗑 Delete Voice Over
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+<button
+id="backBtn"
+class="primaryBtn">
+
+⬅ Back
+
+</button>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<script type="module" src="admin-back.js"></script>
+
+<script type="module" src="music-manager.js"></script>
+
+
+</body>
+
+</html>

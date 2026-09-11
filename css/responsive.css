@@ -1,0 +1,178 @@
+@media (max-width:768px){
+
+.hero{
+
+min-height:100vh;
+
+}
+
+
+.content{
+
+width:92%;
+
+}
+
+
+.content h3{
+
+font-size:20px;
+
+}
+
+
+.content h1{
+
+font-size:28px;
+
+}
+
+
+.content h2{
+
+font-size:34px;
+
+}
+
+
+.content p{
+
+font-size:15px;
+
+line-height:1.7;
+
+}
+
+
+
+.wishBox h2{
+
+font-size:22px;
+
+}
+
+
+.wishBox h1{
+
+font-size:42px;
+
+}
+
+
+.wishBox h3{
+
+font-size:24px;
+
+}
+
+
+
+.card{
+
+padding:30px 20px;
+
+}
+
+
+
+.card h1{
+
+font-size:26px;
+
+}
+
+
+
+.family{
+
+font-size:20px;
+
+}
+
+
+
+.countdown{
+
+gap:8px;
+
+}
+
+
+
+.box{
+
+padding:15px 5px;
+
+}
+
+
+
+.box span{
+
+font-size:22px;
+
+}
+
+
+
+.box small{
+
+font-size:11px;
+
+}
+
+
+
+.gallery{
+
+grid-template-columns:repeat(4,1fr);
+
+}
+
+
+
+}
+
+
+
+@media (max-width:380px){
+
+
+.content h1{
+
+font-size:24px;
+
+}
+
+
+.content h2{
+
+font-size:30px;
+
+}
+
+
+.inviteBtn{
+
+padding:15px 30px;
+
+}
+
+
+
+.countdown{
+
+grid-template-columns:repeat(4,1fr);
+
+}
+
+
+
+.ganpati{
+
+width:150px;
+
+}
+
+
+}

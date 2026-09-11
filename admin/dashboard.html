@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ganpati Invitation Admin</title>
+
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="apple-touch-icon" href="../favicon.png">
+
+<link rel="stylesheet" href="admin.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- =========================
+         Sidebar
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <h2>🎉 Invitation Studio Admin</h2>
+
+            <p>Invitation Management System</p>
+
+        </div>
+
+        <div class="searchBox">
+
+            <input
+                type="text"
+                id="customerSearch"
+                placeholder="Search Customer...">
+
+        </div>
+
+        <button
+            id="addCustomerBtn"
+            class="primaryBtn">
+
+            ➕ Add Customer
+
+        </button>
+
+        <div class="customerHeader">
+
+            <span>Customers</span>
+
+            <span id="customerCount">0</span>
+
+        </div>
+
+        <div
+            id="customerList"
+            class="customerList">
+
+        </div>
+
+        <button
+            id="logoutBtn"
+            class="logoutBtn">
+
+            Logout
+
+        </button>
+
+    </aside>
+
+    <!-- =========================
+         Workspace
+    ========================== -->
+
+    <main class="workspace">
+
+        <div class="workspaceHeader">
+
+            <div>
+
+                <h1 id="customerName">
+
+                    Select Customer
+
+                </h1>
+
+                <small id="customerStatus">
+
+                    No customer selected
+
+                </small>
+
+            </div>
+
+        </div>
+
+        
+
+        <section
+            id="workspaceContent"
+            class="workspaceContent">
+
+            <div class="emptyState">
+
+                <div class="emptyIcon">
+
+                    🎉
+
+                </div>
+
+                <h2>
+
+                    Welcome to Invitation Studio Admin
+
+                </h2>
+
+                <p>
+
+                    Select a customer from the left panel to start managing the invitation.
+
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- =========================
+     Add Customer Modal
+========================= -->
+
+<div id="addCustomerModal" class="modal">
+
+    <div class="editorPanel premiumEditor">
+
+        <h2>
+            ➕ Add New Customer
+        </h2>
+
+
+        <div class="formGrid">
+
+
+            <div class="field">
+
+                <label>
+                    Customer ID
+                </label>
+
+                <input
+                    type="text"
+                    id="newCustomerId"
+                    placeholder="Example: patil"
+                >
+
+            </div>
+
+
+
+            <div class="field">
+
+                <label>
+                    Family Name
+                </label>
+
+                <input
+                    type="text"
+                    id="newCustomerFamily"
+                    placeholder="Family Name"
+                >
+
+            </div>
+
+
+
+            <div class="field full">
+
+                <label>
+                    Invitation Title
+                </label>
+
+                <input
+                    type="text"
+                    id="newCustomerTitle"
+                    placeholder="Invitation Title"
+                >
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="modalActions">
+
+
+            <button
+                id="closeCustomerModal"
+                class="logoutBtn">
+
+                ❌ Cancel
+
+            </button>
+
+
+
+            <button
+                id="createCustomerBtn"
+                class="primaryBtn">
+
+                ✅ Create Customer
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+<script type="module" src="admin-back.js"></script>
+<!-- Admin -->
+<script type="module" src="admin.js"></script>
+
+</body>
+</html>

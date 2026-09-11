@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Admin Login</title>
+
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="apple-touch-icon" href="../favicon.png">
+
+<link rel="stylesheet" href="admin.css">
+<link rel="stylesheet" href="login.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Room Light -->
+
+<div id="roomLight"></div>
+
+<div class="container">
+
+    <!-- ===========================
+         Lamp Section
+    ============================ -->
+
+    <div class="lamp-section">
+
+        <div class="lamp-wrapper">
+
+            <div class="lamp-group">
+
+                <div class="lamp-glow"></div>
+
+                <div class="lamp-beam"></div>
+
+                <img
+                src="../assets/images/lamp.png"
+                class="lamp"
+                id="lamp"
+                alt="Lamp">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ===========================
+         Login Card
+    ============================ -->
+
+    <div
+    class="login-card"
+    id="loginCard">
+
+        <h1>
+            Admin Panel
+        </h1>
+
+        <p>
+            Invitation Studio Management
+        </p>
+
+        <input
+        type="password"
+        id="password"
+        placeholder="Enter Password"
+        autocomplete="new-password">
+
+        <button
+        id="loginBtn">
+
+            Login
+
+        </button>
+
+        <p id="error"></p>
+
+    </div>
+
+</div>
+
+<!-- Lamp Animation -->
+
+<script src="login.js"></script>
+
+
+</body>
+
+</html>

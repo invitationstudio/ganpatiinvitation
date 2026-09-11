@@ -1,0 +1,2665 @@
+.hero{
+
+width:100%;
+min-height:100vh;
+
+background:url("../assets/images/bg.jpg") center/cover no-repeat;
+
+position:relative;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+overflow:hidden;
+opacity: 0;
+visibility: hidden;
+transition: opacity .6s ease;
+
+}
+
+
+.overlay{
+
+position:absolute;
+inset:0;
+
+background:linear-gradient(
+rgba(0,0,0,.65),
+rgba(0,0,0,.45)
+);
+
+backdrop-filter:blur(3px);
+
+}
+
+
+.content{
+
+position:relative;
+
+z-index:10;
+
+width:90%;
+max-width:550px;
+
+text-align:center;
+
+color:#fff;
+
+animation:fadeUp 1.2s ease;
+
+}
+
+
+.content h3{
+
+color:#FFD700;
+
+font-size:24px;
+
+margin-bottom:25px;
+
+font-family:Cinzel,serif;
+
+}
+
+
+.content h1{
+
+font-size:34px;
+
+line-height:1.4;
+
+margin-bottom:20px;
+
+font-family:Cinzel,serif;
+
+}
+
+
+.content h2{
+
+font-size:40px;
+
+line-height:1.3;
+
+color:#FFD700;
+
+margin-bottom:25px;
+
+font-family:Cinzel,serif;
+
+}
+
+
+.content p{
+
+font-size:17px;
+
+line-height:1.8;
+
+margin-bottom:40px;
+
+}
+
+
+.inviteBtn{
+
+display:inline-flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:18px 45px;
+
+background:linear-gradient(
+45deg,
+#FFD700,
+#c89b3c
+);
+
+color:#000;
+
+font-weight:700;
+
+border-radius:60px;
+
+text-decoration:none;
+
+border:none;
+
+cursor:pointer;
+
+box-shadow:0 0 35px gold;
+
+transition:.4s;
+
+}
+
+
+.inviteBtn:hover{
+
+transform:scale(1.08);
+
+}
+
+
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(80px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+
+/* Door */
+
+
+#door{
+    position:fixed;
+    inset:0;
+    display:flex;
+    overflow:hidden;
+    z-index:9999;
+    background:#000;
+}
+
+.left-door,
+.right-door{
+
+    flex:1;
+    height:100vh;
+
+    background-image:url("../assets/images/door.jpg");
+
+    background-size:200% 100%;
+    background-repeat:no-repeat;
+
+    transition:2s cubic-bezier(.7,0,.2,1);
+
+    transform-style:preserve-3d;
+    backface-visibility:hidden;
+
+}
+
+.left-door{
+
+    background-position:left center;
+    transform-origin:left center;
+
+}
+
+.right-door{
+
+    background-position:right center;
+    transform-origin:right center;
+
+}
+
+.open .left-door{
+
+    transform:perspective(1800px) rotateY(-105deg);
+
+}
+
+.open .right-door{
+
+    transform:perspective(1800px) rotateY(105deg);
+
+}
+
+
+
+
+
+/* Wish Screen */
+
+
+#wishScreen{
+
+position:fixed;
+
+inset:0;
+
+background:#000;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:9000;
+
+opacity:0;
+
+visibility:hidden;
+
+transition:1s;
+
+}
+
+
+#wishScreen.show{
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+
+.wishBox{
+
+text-align:center;
+
+padding:20px;
+
+animation:zoomWish 1s;
+
+}
+
+
+.wishBox h2{
+
+color:#fff;
+
+font-size:26px;
+
+}
+
+
+.wishBox h1{
+
+font-size:52px;
+
+color:#FFD700;
+
+}
+
+
+.wishBox h3{
+
+color:#fff;
+
+font-size:30px;
+
+}
+
+
+@keyframes zoomWish{
+
+from{
+
+transform:scale(.5);
+
+opacity:0;
+
+}
+
+to{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+
+
+
+
+
+/* Invitation */
+
+
+.mainInvitation{
+    min-height:100vh;
+    padding:80px 20px;
+
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url("../assets/images/invitation-bg.png");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:none;
+    justify-content:center;
+    align-items:center;
+
+    opacity:0;
+    transform:translateY(40px);
+    transition:all .6s ease;
+}
+
+.mainInvitation.show{
+    display:flex;
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+.mainInvitation.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+
+.card{
+
+width:100%;
+
+max-width:430px;
+
+background: transparent !important;
+
+border: 2px solid #d4af37 !important;
+
+border-radius: 25px !important;
+
+padding:35px 25px;
+
+text-align:center;
+
+box-shadow: 0 0 40px rgba(255,215,0,.2) !important;
+
+animation:cardUp 1s ease;
+
+}
+
+
+.ganpati{
+
+width:180px;
+
+height:auto;
+
+margin:auto;
+
+display:block;
+
+}
+
+
+.card h4{
+
+color:#FFD700;
+
+font-size:20px;
+
+}
+
+
+.card h1{
+
+color:#fff;
+
+font-size:30px;
+
+}
+
+
+.family{
+
+color:#FFD700;
+
+font-size:22px;
+
+}
+
+
+
+
+
+
+.countdown{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:10px;
+
+margin:30px 0;
+
+}
+
+
+.box{
+
+background:#1b1b1b;
+
+padding:18px 8px;
+
+border-radius:15px;
+
+}
+
+
+.box span{
+
+display:block;
+
+font-size:28px;
+
+font-weight:bold;
+
+color:#FFD700;
+
+}
+
+
+.box small{
+
+color:white;
+
+}
+
+
+
+
+
+.mapBtn{
+
+display:inline-flex;
+
+padding:16px 35px;
+
+border-radius:50px;
+
+background:#FFD700;
+
+color:#000;
+
+font-weight:bold;
+
+text-decoration:none;
+
+}
+
+
+
+
+
+.actionButtons{
+
+display:grid;
+
+gap:15px;
+
+margin-top:35px;
+
+}
+
+
+.actionButtons a,
+.actionButtons button{
+
+height:58px;
+
+border-radius:16px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:18px;
+
+font-weight:600;
+
+border:none;
+
+cursor:pointer;
+
+}
+
+
+#callBtn{
+
+background:#222;
+
+color:#fff;
+
+}
+
+
+#whatsappBtn{
+
+background:#25D366;
+
+color:#fff;
+
+}
+
+
+#shareBtn{
+
+background:#FFD700;
+
+color:#000;
+
+}
+
+
+
+
+/* Effects */
+
+
+.petals{
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+overflow:hidden;
+
+z-index:20;
+
+}
+
+
+.flower{
+
+position:absolute;
+
+top:-50px;
+
+font-size:22px;
+
+animation:fall linear forwards;
+
+}
+
+
+@keyframes fall{
+
+to{
+
+transform:translateY(110vh) rotate(360deg);
+
+opacity:.2;
+
+}
+
+}
+
+
+
+
+#goldLight{
+
+position:fixed;
+
+top:50%;
+
+left:50%;
+
+width:20px;
+
+height:20px;
+
+background:#FFD700;
+
+border-radius:50%;
+
+filter:blur(100px);
+
+opacity:0;
+
+z-index:5000;
+
+transition:1.5s;
+
+}
+
+
+#goldLight.show{
+
+opacity:1;
+
+transform:scale(80);
+
+}
+
+
+
+
+#viewer{
+
+position:fixed;
+
+inset:0;
+
+background:rgba(0,0,0,.95);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+opacity:0;
+
+visibility:hidden;
+
+z-index:99999;
+
+}
+
+
+#viewer.show{
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+
+#viewerImg{
+
+max-width:92%;
+
+max-height:92%;
+
+border:3px solid #FFD700;
+
+border-radius:20px;
+
+}
+
+
+#closeViewer{
+
+position:absolute;
+
+top:20px;
+
+right:25px;
+
+font-size:45px;
+
+color:white;
+
+}
+
+
+
+
+#musicBtn{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 10px;
+    height: 10px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFD700, #FF9800);
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 99999;
+    box-shadow: 0 8px 25px rgba(255, 193, 7, 0.5);
+    transition: all 0.3s ease;
+}
+
+#musicBtn:hover{
+    transform: scale(1.1);
+    box-shadow: 0 12px 30px rgba(255, 193, 7, 0.7);
+}
+
+#musicBtn:active{
+    transform: scale(0.95);
+}
+
+#musicBtn.playing{
+    animation: musicPulse 1.5s infinite;
+}
+
+@keyframes musicPulse{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.12);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+
+
+@keyframes cardUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(80px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+html{
+
+scroll-behavior:smooth;
+
+}
+#door.hide{
+    display:none;
+}
+/* ==========================================
+   Falling Flowers - PNG Images Version
+========================================== */
+
+#flowerContainer {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.flower {
+    position: absolute;
+    top: -100px; /* Start above viewport */
+    animation: flowerFall linear forwards;
+    will-change: transform;
+    opacity: 0.9;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+@keyframes flowerFall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 0;
+    }
+    
+    10% {
+        opacity: 1;
+    }
+    
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0.3;
+    }
+}
+
+/* Optional: Add sway animation */
+.flower:nth-child(odd) {
+    animation: flowerFallSway 8s linear forwards;
+}
+
+.flower:nth-child(even) {
+    animation: flowerFallSway 10s linear forwards;
+}
+
+@keyframes flowerFallSway {
+    0% {
+        transform: translateY(-100px) translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    
+    10% {
+        opacity: 1;
+    }
+    
+    25% {
+        transform: translateY(25vh) translateX(-30px) rotate(90deg);
+    }
+    
+    50% {
+        transform: translateY(50vh) translateX(30px) rotate(180deg);
+    }
+    
+    75% {
+        transform: translateY(75vh) translateX(-20px) rotate(270deg);
+    }
+    
+    100% {
+        transform: translateY(110vh) translateX(0) rotate(360deg);
+        opacity: 0.3;
+    }
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+    .flower {
+        max-width: 30px !important;
+        max-height: 30px !important;
+    }
+
+    .flower {
+    filter: 
+        drop-shadow(0 0 5px rgba(255,182,193,0.6))
+        drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+}
+/* =========================
+   Hero Ganpati Image
+========================= */
+
+.heroGanpati{
+    width:170px;
+    max-width:70%;
+    display:block;
+    margin:0 auto 20px;
+    filter:drop-shadow(0 0 18px rgba(255,215,0,.8));
+    animation:heroFloat 3s ease-in-out infinite;
+}
+
+@keyframes heroFloat{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+@media (max-width:768px){
+
+    .heroGanpati{
+        width:130px;
+        margin-bottom:16px;
+    }
+
+}
+/* =========================
+   Premium Invite Button
+========================= */
+
+.inviteBtn{
+    position: relative;
+    overflow: hidden;
+    transition: all .3s ease;
+    box-shadow: 0 8px 25px rgba(255,193,7,.35);
+}
+
+.inviteBtn:hover{
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 12px 35px rgba(255,193,7,.55);
+}
+
+.inviteBtn::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:60%;
+    height:100%;
+    background:rgba(255,255,255,.35);
+    transform:skewX(-25deg);
+    transition:.7s;
+}
+
+.inviteBtn:hover::before{
+    left:140%;
+}
+.hero.show{
+    opacity:1;
+    visibility:visible;
+}
+/* Hero Top Ganpati */
+
+.heroTopGanpati{
+    width:220px;
+    max-width:75%;
+    display:block;
+    margin:0 auto 25px;
+    filter:drop-shadow(0 0 20px rgba(255,215,0,.9));
+    animation:heroFloat 3s ease-in-out infinite;
+}
+
+@media(max-width:768px){
+
+    .heroTopGanpati{
+        width:150px;
+        margin-bottom:20px;
+    }
+
+}
+/* =========================
+   Wish Screen Ganpati
+========================= */
+
+.wishGanpati{
+    width:150px;
+    max-width:60%;
+    height:auto;
+    display:block;
+    margin:0 auto 20px;
+    filter:drop-shadow(0 0 20px rgba(255,215,0,.8));
+    animation:heroFloat 3s ease-in-out infinite;
+}
+
+@media (max-width:768px){
+
+    .wishGanpati{
+        width:110px;
+        margin-bottom:15px;
+    }
+
+}
+/* Force Wish Screen Image Size */
+
+#wishScreen .wishGanpati{
+    display:block !important;
+    width:140px !important;
+    max-width:140px !important;
+    height:auto !important;
+    margin:0 auto 20px !important;
+    object-fit:contain !important;
+}
+.hiddenAdmin{
+
+    position:fixed;
+
+    top:5px;
+
+    right:2px;
+
+    width:25px;
+
+    height:25px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-decoration:none;
+
+    font-size:22px;
+
+    opacity:.15;
+
+    z-index:999999;
+
+    transition:.3s;
+
+}
+
+.hiddenAdmin:hover{
+
+    opacity:1;
+
+    transform:scale(1.15);
+
+}
+/* =========================
+   Premium Gallery
+========================= */
+
+.gallery{
+
+    margin-top:50px;
+    padding:20px;
+    text-align:center;
+
+}
+
+.gallery h2{
+
+    color:#fff;
+    font-size:32px;
+    margin-bottom:25px;
+    font-weight:700;
+
+}
+
+.gallery-grid{
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+
+}
+
+.gallery-card{
+
+    overflow:hidden;
+    border-radius:16px;
+    border:2px solid #d4af37;
+    box-shadow:0 8px 20px rgba(0,0,0,.35);
+
+}
+
+.galleryImage{
+
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    display:block;
+    transition:.35s;
+
+}
+
+.galleryImage:hover{
+
+    transform:scale(1.08);
+
+}
+
+@media(max-width:768px){
+
+    .gallery{
+
+        padding:15px;
+
+    }
+
+    .gallery h2{
+
+        font-size:28px;
+
+    }
+
+    .gallery-grid{
+
+        grid-template-columns:repeat(2,1fr);
+        gap:12px;
+
+    }
+
+}
+#themeBackground{
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    z-index:-1;
+
+    background-repeat:no-repeat;
+
+}
+#enterBtn{
+
+    position:fixed;
+
+    left:50%;
+    bottom:160px;
+
+    transform:translateX(-50%);
+
+    width:120px;
+    height:120px;
+
+    border-radius:50%;
+    background:linear-gradient(
+145deg,
+#FFF8C9 0%,
+#FFE45C 20%,
+#FFD700 45%,
+#E6B800 70%,
+#B8860B 100%);
+
+
+border:2px solid #FFF2A6;
+
+color:#5C3A00;
+
+    font-family:Cinzel,serif;
+    font-size:30px;
+    font-weight:700;
+    letter-spacing:3px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    cursor:pointer;
+
+    z-index:10000;
+
+    box-shadow:
+0 0 12px rgba(255,215,0,.8),
+0 0 30px rgba(255,215,0,.7),
+inset 0 2px 6px rgba(255,255,255,.8),
+inset 0 -3px 8px rgba(0,0,0,.2);
+
+    text-shadow:
+        0 0 8px #FFD700,
+        2px 2px 4px #000;
+
+    transition:.35s;
+
+    overflow:hidden;
+
+}
+
+#enterBtn:hover{
+
+    transform:translateX(-50%) scale(1.08);
+
+    box-shadow:
+        0 0 35px #FFD700,
+        0 0 70px rgba(255,215,0,.8);
+
+}
+#enterBtn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-20%;
+    left:-120%;
+
+    width:45%;
+    height:140%;
+
+    background:rgba(255,255,255,.6);
+
+    transform:rotate(25deg);
+
+    transition:.8s;
+
+}
+
+#enterBtn:hover::before{
+
+    left:140%;
+
+}
+
+/* ==========================
+   WhatsApp Floating Button
+========================== */
+
+.enquiryBtn{
+
+    position:fixed;
+
+    right:5px;
+
+    bottom:95px;
+
+    width:30spx !important;
+
+    height:30px !important;
+
+    border-radius:50%;
+
+    background:#25D366;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-decoration:none;
+
+    z-index:999999;
+
+    box-shadow:
+        0 0 15px rgba(37,211,102,.6);
+
+    transition:.3s;
+
+}
+
+.enquiryBtn i{
+
+    font-size:25px;
+
+    color:#fff;
+
+    line-height:1;
+
+}
+
+.enquiryBtn:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:
+        0 0 25px rgba(37,211,102,.9);
+
+}
+
+
+/* Mobile */
+
+@media(max-width:600px){
+
+    .enquiryBtn{
+
+        right:10px;
+
+        bottom:60px;
+
+        width:20px;
+
+        height:20px;
+
+        
+    }
+
+}
+/* ==========================
+   Aarti Floating Button
+========================== */
+
+#aartiBtn{
+
+    position:fixed;
+
+    right:10px;
+
+    bottom:110px;
+
+    width:40px;
+
+    height:40px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#FF9800,#FFD700);
+
+    color:#fff;
+
+    font-size:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    cursor:pointer;
+
+    z-index:999999;
+
+    box-shadow:
+        0 0 15px rgba(255,193,7,.6);
+
+    transition:.3s;
+
+}
+
+#aartiBtn:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:
+        0 0 25px rgba(255,193,7,.9);
+
+}
+
+
+/* Mobile */
+
+@media(max-width:600px){
+
+    #aartiBtn{
+
+        right:10px;
+
+        bottom:110px;
+
+    }
+
+}
+/* ==========================
+   Aarti Popup
+========================== */
+
+#aartiPopup{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.65);
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:9999999;
+
+    backdrop-filter:blur(6px);
+
+}
+
+#aartiPopup.show{
+
+    display:flex;
+
+}
+
+.aartiBox{
+
+    width:90%;
+
+    max-width:360px;
+
+    background:linear-gradient(180deg,#fffdf5,#fff4d6);
+
+    border:2px solid #d4af37;
+
+    border-radius:20px;
+
+    padding:20px;
+
+    box-shadow:
+    0 0 40px rgba(212,175,55,.45);
+
+    animation:aartiPop .35s ease;
+
+}
+
+@keyframes aartiPop{
+
+    from{
+
+        transform:scale(.8);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+.aartiBox h2{
+
+    margin:0 0 18px;
+
+    text-align:center;
+
+    color:#8B5A00;
+
+    font-size:24px;
+
+    font-family:Cinzel,serif;
+
+}
+
+.aartiItem{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-bottom:10px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:linear-gradient(135deg,#FFD54F,#FFB300);
+
+    color:#5C3A00;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.aartiItem:hover{
+
+    transform:scale(1.03);
+
+}
+
+#closeAarti{
+
+    width:100%;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#d32f2f;
+
+    color:#fff;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+}
+#aartiBtn.playing{
+
+    background:#d4af37 !important;
+
+    color:#000 !important;
+
+    box-shadow:
+        0 0 12px #d4af37,
+        0 0 25px #d4af37,
+        0 0 45px rgba(212,175,55,.9);
+
+    animation:aartiGlow 1s ease-in-out infinite alternate !important;
+
+}
+
+@keyframes aartiGlow{
+
+    from{
+
+        transform:scale(1);
+
+        box-shadow:
+            0 0 8px #d4af37,
+            0 0 20px #d4af37;
+
+    }
+
+    to{
+
+        transform:scale(1.08);
+
+        box-shadow:
+            0 0 18px #d4af37,
+            0 0 40px #d4af37,
+            0 0 60px rgba(212,175,55,.9);
+
+    }
+
+}
+
+.stopAartiBtn{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-top:12px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#d32f2f;
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.stopAartiBtn:hover{
+
+    transform:scale(1.03);
+
+    background:#b71c1c;
+
+}
+/* ==========================
+   Desktop Floating Buttons
+========================== */
+
+@media (min-width:769px){
+
+    #musicBtn{
+
+        right:25px;
+        bottom:25px;
+
+        width:10px;
+        height:10px;
+
+        font-size:22px;
+
+    }
+
+    .enquiryBtn{
+
+        right:25px;
+        bottom:100px;
+
+        width:70px !important;
+        height:70px !important;
+
+    }
+
+    .enquiryBtn i{
+
+        font-size:25px;
+
+    }
+
+    #aartiBtn{
+
+        right:25px;
+        bottom:175px;
+
+        width:60px;
+        height:60px;
+
+        font-size:25px;
+
+    }
+
+}
+/* =========================
+   Floating Buttons Fix
+========================= */
+
+#musicBtn,
+#aartiBtn,
+.enquiryBtn{
+
+    position:fixed !important;
+
+    right:10px !important;
+
+    width:20px !important;
+    height:20px !important;
+
+    display:flex !important;
+    justify-content:center !important;
+    align-items:center !important;
+
+    border-radius:50% !important;
+
+    z-index:999999 !important;
+
+}
+
+#musicBtn{
+
+    bottom:20px !important;
+
+}
+
+#aartiBtn{
+
+    bottom:60px !important;
+
+}
+
+.enquiryBtn{
+
+    bottom:100px !important;
+
+}
+#aartiBtn img{
+
+    width:90%;
+    height:90%;
+
+    object-fit:contain;
+
+    pointer-events:none;
+
+    transform:scale(1.7);
+
+}
+/* Premium Family Box Design */
+.familyBox {
+    background: linear-gradient(145deg, #fdf4d8 0%, #fce8a8 50%, #f5d76e 100%);
+    border: 3px solid #d4af37;
+    border-radius: 25px;
+    padding: 25px 35px;
+    margin: 30px auto;
+    max-width: 360px;
+    text-align: center;
+    box-shadow: 
+        0 10px 30px rgba(212, 175, 55, 0.5),
+        inset 0 2px 5px rgba(255, 255, 255, 0.6),
+        inset 0 -3px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.familyBox .family {
+    color: #8B5A00 !important;
+    font-size: 28px;
+    font-weight: 800;
+    font-family: 'Cinzel', serif;
+    margin: 0;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 600px) {
+    .familyBox {
+        padding: 18px 25px;
+        max-width: 290px;
+    }
+    
+    .familyBox .family {
+        font-size: 23px;
+    }
+}
+/* =========================
+   HANGING DETAILS CARDS
+========================= */
+
+.hangingDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin: 40px auto;
+    max-width: 420px;
+    position: relative;
+    padding-top: 30px;
+}
+
+/* Rope / Thread Line */
+.hangingRope {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg, #8B5A00, #d4af37, #8B5A00);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    z-index: 1;
+}
+
+/* Hanging Card */
+.hangingCard {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 25px;
+    border-radius: 50px 20px 20px 50px;
+    background: linear-gradient(145deg, #fdf4d8, #fce8a8, #f5d76e);
+    border: 3px solid #d4af37;
+    box-shadow: 
+        0 8px 25px rgba(212, 175, 55, 0.4),
+        inset 0 2px 5px rgba(255, 255, 255, 0.6),
+        inset 0 -3px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    z-index: 2;
+    margin: 0 15px;
+}
+
+/* Rope Connection Point */
+.hangingCard::before {
+    content: "";
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #d4af37, #8B5A00);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    border: 2px solid #fce8a8;
+}
+
+/* Hanging Card Alternate Colors */
+.dateHangingCard {
+    background: linear-gradient(145deg, #fdf4d8, #fce8a8, #f5d76e);
+}
+
+.timeHangingCard {
+    background: linear-gradient(145deg, #fdf4d8, #fce8a8, #f5d76e);
+}
+
+.addressHangingCard {
+    background: linear-gradient(145deg, #fdf4d8, #fce8a8, #f5d76e);
+}
+
+/* Hanging Card Icon */
+.hangingCardIcon {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    background: linear-gradient(145deg, #fff8e1, #fce8a8);
+    border: 3px solid #d4af37;
+    flex-shrink: 0;
+    box-shadow: 
+        0 4px 10px rgba(0, 0, 0, 0.15),
+        inset 0 2px 4px rgba(255, 255, 255, 0.8);
+    animation: hangingSwing 3s ease-in-out infinite;
+    transform-origin: top center;
+}
+
+/* Swing Animation */
+@keyframes hangingSwing {
+    0%, 100% {
+        transform: rotate(-3deg);
+    }
+    50% {
+        transform: rotate(3deg);
+    }
+}
+
+/* Hanging Card Content */
+.hangingCardContent {
+    flex: 1;
+}
+
+.hangingCardHeading {
+    color: #8B5A00;
+    font-size: 18px;
+    font-weight: 800;
+    margin: 0 0 5px;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.hangingCardText {
+    color: #5C3A00;
+    font-size: 15px;
+    margin: 0;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+/* Hover Effect */
+.hangingCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 15px 35px rgba(212, 175, 55, 0.5),
+        inset 0 2px 5px rgba(255, 255, 255, 0.6),
+        inset 0 -3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hangingCard:hover::before {
+    background: radial-gradient(circle, #FFD700, #d4af37);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+}
+
+.hangingCard:hover .hangingCardIcon {
+    animation: hangingSwing 1.5s ease-in-out infinite;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+/* Decorative Elements */
+.hangingDetails::before {
+    content: "❁";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: #d4af37;
+    z-index: 3;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hangingDetails::after {
+    content: "❁";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: #d4af37;
+    z-index: 3;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .hangingDetails {
+        max-width: 340px;
+        gap: 20px;
+    }
+    
+    .hangingCard {
+        padding: 15px 20px;
+        margin: 0 10px;
+    }
+    
+    .hangingCardIcon {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+    }
+    
+    .hangingCardHeading {
+        font-size: 16px;
+    }
+    
+    .hangingCardText {
+        font-size: 13px;
+    }
+}
+/* Premium Family Box Design */
+.familyBox {
+    background: linear-gradient(145deg, #fdf4d8 0%, #fce8a8 50%, #f5d76e 100%);
+    border: 3px solid #d4af37;
+    border-radius: 25px;
+    
+    /* 🔥 WIDTH - इथे बदला */
+    width: 360px;
+    height: 180px;              /* आत्ताचा आकार */
+    /* width: 300px; */       /* कमी करायचा असेल तर */
+    /* width: 420px; */       /* जास्त करायचा असेल तर */
+    
+    /* 🔥 HEIGHT (Padding ने control होतो) */
+    padding: 25px 35px;       /* आत्ताचा आकार */
+    /* padding: 15px 25px; */ /* कमी करायचा असेल तर */
+    /* padding: 40px 50px; */ /* जास्त करायचा असेल तर */
+    
+    margin: 30px auto;
+    max-width: 360px;
+    max-height: 180px;
+    text-align: center;
+    box-shadow: 
+        0 10px 30px rgba(212, 175, 55, 0.5),
+        inset 0 2px 5px rgba(255, 255, 255, 0.6),
+        inset 0 -3px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    /* 🔥 कमी जास्त करण्यासाठी हे पण बदलता येईल */
+    /* min-height: 100px; */
+    /* min-height: 150px; */
+}
+
+
+
+.familyBox .family {
+    color: #8B5A00 !important;
+    font-size: 28px;
+    font-weight: 800;
+    font-family: 'Cinzel', serif;
+    margin: 0;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+    
+    /* 🔥 Text चा आकार बदलण्यासाठी */
+    /* font-size: 24px; */  /* कमी */
+    /* font-size: 32px; */  /* जास्त */
+}
+
+.left-flower {
+    position: absolute;
+    left: 5px;
+    top: 15%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: auto;
+}
+
+.right-flower {
+    position: absolute;
+    right: 5px;
+    top: 15%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: auto;
+}
+
+
+
+@media (max-width: 600px) {
+    .familyBox {
+        padding: 18px 25px;
+        max-width: 290px;
+        
+        /* 🔥 Mobile वर Width बदलण्यासाठी */
+        width: 320px;
+        height: 80px;
+        margin-left: -4px;
+        /* width: 250px; */  /* कमी */
+        /* width: 320px; */  /* जास्त */
+    }
+    
+    .familyBox .family {
+        font-size: 23px;
+    
+        /* font-size: 20px; */  /* कमी */
+        /* font-size: 26px; */  /* जास्त */
+    }
+
+}
+@media (max-width: 600px) {
+    .left-flower {
+        top: 35px;
+        left: 5px;
+    }
+    
+    .right-flower {
+        top: 35px;
+        left: 238px;
+    }
+}
+
+/* =========================
+   SATELLITE MAP CARD
+========================= */
+
+.map-card {
+    position: relative;
+    display: block;
+    width: min(100%, 820px);
+    height: 400px;
+    margin: auto;
+    border-radius: 28px;
+    overflow: hidden;
+    border: 3px solid rgba(255, 215, 100, 0.6);
+    box-shadow: 
+        0 25px 60px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(255, 215, 100, 0.1);
+    cursor: pointer;
+    background: #1a1a1a;
+}
+
+/* Satellite Map Iframe */
+.map-card iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* Map Info Box */
+.map-info {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    padding: 20px 25px;
+    border-radius: 20px;
+    background: linear-gradient(145deg, rgba(36, 7, 12, 0.95), rgba(60, 15, 25, 0.95));
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 215, 100, 0.4);
+    color: #fff0c5;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.map-info span {
+    display: block;
+    color: #ffd700;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.map-info strong {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin: 8px 0;
+    font-family: 'Cinzel', serif;
+    color: #fff;
+}
+
+.map-info small {
+    color: rgba(255, 215, 100, 0.8);
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.map-info small::after {
+    content: "↗";
+    font-size: 1.2rem;
+    color: #ffd700;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .map-card {
+        height: 320px;
+        border-radius: 20px;
+    }
+    
+    .map-info {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        padding: 15px 18px;
+    }
+    
+    .map-info strong {
+        font-size: 1.1rem;
+    }
+    
+    .map-info span {
+        font-size: 0.95rem;
+    }
+}
+
+/* ==========================================
+   INVITATOR SECTION - COMPLETE
+========================================== */
+
+.invitators-section {
+    padding: 100px 20px;
+    position: relative;
+}
+
+.section-kicker {
+    text-align: center;
+    color: #e9b64e;
+    letter-spacing: 2px;
+    font-size: .9rem;
+    margin-bottom: 6px;
+}
+
+.section-decor {
+    text-align: center;
+    color: #f8cf62;
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+}
+
+.invitators-section h2 {
+    text-align: center;
+    font-family: "Cinzel", "Noto Sans Devanagari", serif;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    margin-bottom: 38px;
+}
+
+.invitators-section h2 span {
+    color: #ffd15d;
+}
+
+/* Slider Layout */
+.invitor-slider {
+    width: min(100%, 720px);
+    margin: auto;
+    display: grid;
+    grid-template-columns: 55px 1fr 55px;
+    align-items: center;
+    gap: 14px;
+}
+
+/* Slider Buttons */
+.slider-btn {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 1px solid #eac056;
+    background: #2c0a11;
+    color: #ffe3a0;
+    font-size: 2.3rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: .25s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.slider-btn:hover {
+    background: #a3162d;
+    transform: scale(1.08);
+}
+
+/* Stage */
+.invitor-stage {
+    position: relative;
+    min-height: 460px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+/* Invitor Card */
+.invitor-card {
+    position: absolute;
+    width: min(100%, 390px);
+    padding: 20px;
+    text-align: center;
+    border: 1px solid rgba(255, 210, 99, .35);
+    border-radius: 28px;
+    background: linear-gradient(145deg, rgba(255, 231, 170, .09), rgba(98, 8, 25, .32));
+    box-shadow: 0 20px 45px #0007;
+    opacity: 0;
+    transform: translateX(40px) scale(.92);
+    pointer-events: none;
+    transition: all .55s cubic-bezier(.2, .8, .2, 1);
+}
+
+.invitor-card.active {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    pointer-events: auto;
+}
+
+/* Photo Placeholder */
+.photo-placeholder {
+    width: 210px;
+    max-width: 70vw;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    margin: auto;
+    border: 6px solid #c89527;
+    box-shadow: 0 0 0 5px rgba(255, 224, 134, .12), 0 15px 30px #0007;
+    display: grid;
+    place-items: center;
+    background: radial-gradient(circle, #d8a536, #6a0b1b 60%, #26070b);
+}
+
+.photo-placeholder span {
+    font-weight: 800;
+    color: #fff0c2;
+}
+
+.photo-placeholder img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Card Content */
+.invitor-card h3 {
+    font-size: 1.45rem;
+    margin-top: 20px;
+    color: #ffe5a0;
+    line-height: 1.3;
+}
+
+.invitor-card p {
+    color: #e8cba0;
+    margin-top: 6px;
+    font-size: .95rem;
+}
+
+/* Slider Dots */
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #6b3d20;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.dot.active {
+    width: 26px;
+    border-radius: 9px;
+    background: #f2c453;
+}
+
+.slider-help {
+    text-align: center;
+    color: #c6a77a;
+    font-size: .8rem;
+    margin-top: 14px;
+}
+
+/* ==========================================
+   INVITATOR SECTION - MOBILE ONLY
+========================================== */
+
+@media (max-width: 650px) {
+    
+    .invitators-section {
+        padding: 60px 12px;
+        width: 320px;
+        height: auto;
+        margin-left: -15px;
+    }
+
+    .invitators-section h2 {
+        font-size: 1.8rem;
+        margin-bottom: -10px;
+    }
+
+    /* Slider Layout */
+    .invitor-slider {
+        grid-template-columns: 36px 1fr 36px;
+        gap: 4px;
+        width: 100%;
+    }
+
+    /* Slider Buttons */
+    .slider-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1.4rem;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+
+    /* Stage */
+    .invitor-stage {
+        min-height: 380px;
+    }
+
+    /* Card */
+    .invitor-card {
+        max-width: 280px;
+        padding: 12px;
+        border-radius: 20px;
+    }
+
+    /* Photo */
+    .photo-placeholder {
+        width: 200px;
+        height: 250px;
+        max-width: 200px;
+        border: 4px solid #c89527;
+        margin: 0 auto 12px;
+        margin-left: -5px;
+    }
+
+    .photo-placeholder span {
+        font-size: .90rem;
+    }
+
+    /* Name */
+    .invitor-card h3 {
+        font-size: 1.1rem;
+        margin-top: 10px;
+    }
+
+    /* Relation */
+    .invitor-card p {
+        font-size: .8rem;
+    }
+
+    /* Dots */
+    .slider-dots {
+        gap: 5px;
+        margin-top: 12px;
+    }
+
+    .dot {
+        width: 6px;
+        height: 6px;
+    }
+
+    .dot.active {
+        width: 18px;
+    }
+
+    /* Help Text */
+    .slider-help {
+        font-size: .65rem;
+        margin-top: 8px;
+    }
+}
+/* ==========================================
+   SHUBHECHHA ENVELOPE + LETTER
+========================================== */
+
+.letterSectionGanpati {
+    position: relative;
+    width: 100%;
+    padding: 80px 20px;
+    text-align: center;
+    background: transparent !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Envelope */
+.letterEnvelopeGanpati {
+    position: relative;
+    width: min(430px, 100%);
+    height: 430px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.envelopeGanpati {
+    position: relative;
+    width: 350px;
+    height: 230px;
+    margin-top: 45px;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.envelopeImageGanpati {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    z-index: 5;
+    filter: drop-shadow(0 20px 35px rgba(0,0,0,0.55));
+    transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+/* Round Open Button */
+.envelopeRoundButtonGanpati {
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 3px solid #f3d77d;
+    background: radial-gradient(circle, #9d2530, #5e1119);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5), 0 0 20px rgba(220,170,70,0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.envelopeRoundButtonGanpati span {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.envelopeRoundButtonGanpati:hover {
+    transform: translate(-50%, -50%) scale(1.08);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 0 30px rgba(240,190,80,0.6);
+}
+
+/* Envelope Opening Animation */
+.envelopeOpeningGanpati .envelopeImageGanpati {
+    transform: translateY(55px) scale(0.94);
+    opacity: 0.25;
+}
+
+.envelopeOpeningGanpati .envelopeRoundButtonGanpati {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+}
+
+/* Letter Card */
+.letterCardGanpati {
+    position: relative;
+    width: min(850px, 100%);
+    margin: 40px auto 60px;
+    text-align: center;
+}
+
+.letterVisibleGanpati {
+    animation: letterReveal 1s ease forwards;
+}
+
+/* ==========================================
+   LETTER PAPER - BROAD, BIG & NO SCROLL
+========================================== */
+
+.letterPaperGanpati {
+    position: relative;
+    width: 130%;
+    max-width: 750px;             /* 🔥 जास्त Broad */
+    
+    /* 🔥 Height Auto (Content प्रमाणे) */
+    min-height: 550px;
+    height: auto;
+    
+    margin: 0 auto;
+    padding: 45px 50px;
+    
+    border: 3px solid #d4ae52;
+    border-radius: 14px;
+    
+    background: linear-gradient(135deg, #fff9e8, #f3dfae);
+    color: #3a2417;
+    
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.65);
+    
+    /* 🔥 Content Center */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    /* 🔥 Scroll काढा */
+    overflow: visible;
+}
+
+.letterPaperGanpati h3 {
+    margin-bottom: 18px;
+    font-size: 26px;
+    color: #6c451c;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.letterPaperGanpati p {
+    margin-bottom: 14px;
+    font-size: 16px;
+    line-height: 1.7;
+    text-align: center;
+    width: 100%;
+}
+
+.letterTopDecorationGanpati {
+    margin-bottom: 18px;
+    color: #bd8b28;
+    font-size: 20px;
+    text-align: center;
+}
+
+.letterEndingGanpati {
+    margin-top: 18px;
+    font-size: 19px !important;
+    font-weight: 700;
+    color: #8a5d1d;
+    text-align: center;
+}
+
+.letterSealGanpati {
+    width: 48px;
+    height: 48px;
+    margin: 18px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #8f1e28;
+    color: #fff;
+    font-size: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.letterCardGanpati {
+    position: relative;
+    width: min(800px, 100%);
+    margin: 40px auto 60px;
+    text-align: center;
+    padding: 0 20px;
+    margin-left: -45px;
+}
+
+.secondaryButtonGanpati {
+    margin-top: 25px;
+    width: 180px;
+    height: 48px;
+    border: 1px solid #d5b45c;
+    border-radius: 30px;
+    background: transparent;
+    color: #e5c66e;
+    font-size: 12px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 90px;
+}
+
+.secondaryButtonGanpati:hover {
+    background: rgba(213, 180, 92, 0.1);
+}
+/* Mobile */
+@media (max-width: 768px) {
+    .letterEnvelopeGanpati {
+        min-height: 290px;
+    }
+    
+    .envelopeGanpati {
+        width: min(310px, 90%);
+        height: 205px;
+    }
+    
+    .letterPaperGanpati {
+        padding: 40px 25px;
+    }
+    
+    .letterPaperGanpati h3 {
+        font-size: 24px;
+    }
+    
+    .letterPaperGanpati p {
+        font-size: 16px;
+    }
+}
+@media (max-width: 768px) {
+
+    /* 🔥 Mobile Letter Paper - Broad & No Scroll */
+    .letterPaperGanpati {
+        width: 130%;
+        max-width: 130%;
+        margin-left: -15%;
+        
+        /* 🔥 Height Auto */
+        min-height: auto;
+        height: auto;
+        
+        padding: 30px 22px;
+        border-radius: 12px;
+        
+        /* 🔥 Scroll नको */
+        overflow: visible;
+    }
+
+    .letterPaperGanpati h3 {
+        font-size: 20px;
+        margin-bottom: 14px;
+        line-height: 1.3;
+    }
+
+    .letterPaperGanpati p {
+        font-size: 13.5px;
+        line-height: 1.65;
+        margin-bottom: 11px;
+    }
+
+    .letterTopDecorationGanpati {
+        font-size: 17px;
+        margin-bottom: 13px;
+    }
+
+    .letterEndingGanpati {
+        font-size: 16px !important;
+        margin-top: 13px;
+    }
+
+    .letterSealGanpati {
+        width: 40px;
+        height: 40px;
+        font-size: 17px;
+        margin-top: 13px;
+    }
+
+    .letterCardGanpati {
+        width: 100%;
+        padding: 0 12px;
+        margin: 30px auto 50px;
+    }
+
+    .secondaryButtonGanpati {
+        width: 160px;
+        height: 44px;
+        font-size: 11px;
+        margin-top: 20px;
+    }
+
+}

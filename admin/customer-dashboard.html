@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Customer Dashboard</title>
+
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="apple-touch-icon" href="../favicon.png">
+
+<link rel="stylesheet" href="admin.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <h2 id="customerFamily">
+                Customer
+            </h2>
+
+            <p id="customerId">
+                Customer ID
+            </p>
+
+        </div>
+
+        <button id="invitationBtn" class="primaryBtn active">
+            📝 Invitation
+        </button>
+
+        <button id="galleryBtn" class="primaryBtn">
+    🖼 Gallery
+</button>
+
+<button id="musicBtn" class="primaryBtn">
+    🎵 Music
+</button>
+
+<button id="aartiManagerBtn" class="primaryBtn">
+    🙏 Aarti Manager
+</button>
+
+<button id="themeBtn" class="primaryBtn">
+    🎨 Theme
+</button>
+
+        <button id="previewBtn" class="primaryBtn">
+            👀 Preview
+        </button>
+
+        <button id="copyLinkBtn" class="action-btn">
+    📋 Copy Link
+</button>
+
+<button id="analyticsBtn" class="action-btn">
+    📊 Analytics
+</button>
+
+<!-- ===========================
+     Invitation Analytics
+=========================== -->
+
+<div id="analyticsCard" class="analyticsCard" style="display:none;">
+
+
+    <h3>
+        📊 Invitation Analytics
+    </h3>
+
+
+    <div class="analyticsItem">
+
+        <span>
+            👁 Total Views
+        </span>
+
+        <strong id="totalViews">
+            0
+        </strong>
+
+    </div>
+
+
+    <div class="analyticsItem">
+
+    <span>
+        🔗 Total Shares
+    </span>
+
+    <strong id="totalShares">
+        0
+    </strong>
+
+</div>
+
+    <div class="analyticsItem">
+
+        <span>
+            ❤️ Wishes Received
+        </span>
+
+        <strong id="wishesReceived">
+            0
+        </strong>
+
+    </div>
+
+
+</div>
+
+        <button id="backBtn" class="logoutBtn">
+            ⬅ Back
+        </button>
+
+    </aside>
+
+    <main class="workspace">
+
+        <div class="workspaceHeader">
+
+            <h1 id="pageTitle">
+                Customer Dashboard
+            </h1>
+
+        </div>
+
+        <section
+id="workspaceContent"
+class="workspaceContent">
+
+<!-- ===========================
+     INVITATION SECTION (Default Show)
+=========================== -->
+
+<div id="invitationSection" class="editorPanel premiumEditor">
+
+
+
+<h2>
+🙏 Invitation Details
+</h2>
+
+
+
+
+<div class="formGrid">
+
+    <div class="field">
+
+        <label>
+            Invitation Title
+
+            <label class="visibility-control">
+                <input
+                    type="checkbox"
+                    class="visibility-checkbox"
+                    data-field="title"
+                    checked>
+            </label>
+
+        </label>
+
+        <input
+            type="text"
+            id="title">
+
+    </div>
+
+
+    <div class="field">
+
+        <label>
+            Family Name
+
+            <label class="visibility-control">
+                <input
+                    type="checkbox"
+                    class="visibility-checkbox"
+                    data-field="family"
+                    checked>
+                
+            </label>
+
+        </label>
+
+        <input
+            type="text"
+            id="family">
+
+    </div>
+
+
+    <div class="field">
+
+        <label>
+            Event Date
+
+            <label class="visibility-control">
+                <input
+                    type="checkbox"
+                    class="visibility-checkbox"
+                    data-field="date"
+                    checked>
+                
+            </label>
+
+        </label>
+
+        <input
+            type="date"
+            id="date">
+
+    </div>
+
+
+    <div class="field">
+
+        <label>
+            Event Time
+
+            <label class="visibility-control">
+                <input
+                    type="checkbox"
+                    class="visibility-checkbox"
+                    data-field="time"
+                    checked>
+                
+            </label>
+
+        </label>
+
+        <input
+            type="time"
+            id="time">
+
+    </div>
+
+
+    <div class="field">
+
+        <label>
+            Event Date Time
+
+            <label class="visibility-control">
+                <input
+                    type="checkbox"
+                    class="visibility-checkbox"
+                    data-field="eventDate"
+                    checked>
+                
+            </label>
+
+        </label>
+
+        <input
+            type="datetime-local"
+            id="eventDate">
+
+    </div>
+
+
+    <div class="field">
+
+        <label>
+            Phone Number
+
+            <label class="visibility-control">
+                <input
+                    type="checkbox"
+                    class="visibility-checkbox"
+                    data-field="phone"
+                    checked>
+                
+            </label>
+
+        </label>
+
+        <input
+            type="text"
+            id="phone">
+
+    </div>
+
+
+    <div class="field">
+
+        <label>
+            WhatsApp Number
+
+            <label class="visibility-control">
+                <input
+                    type="checkbox"
+                    class="visibility-checkbox"
+                    data-field="whatsapp"
+                    checked>
+                
+            </label>
+
+        </label>
+
+        <input
+            type="text"
+            id="whatsapp">
+
+    </div>
+
+
+    <div class="field full">
+
+        <label>
+            Address
+
+            <label class="visibility-control">
+                <input
+                    type="checkbox"
+                    class="visibility-checkbox"
+                    data-field="address"
+                    checked>
+                
+            </label>
+
+        </label>
+
+        <textarea
+            id="address"></textarea>
+
+    </div>
+
+
+    <!-- ===========================
+     LOCATION / MAP SETTINGS
+=========================== -->
+
+<div class="field full">
+    <label>
+        📍 स्थळाचे नाव (Location Name)
+    </label>
+    <input type="text" id="locationName" placeholder="उदा. देशपांडे निवास">
+</div>
+
+<div class="field full">
+    <label>
+        📍 संपूर्ण पत्ता (Address)
+    </label>
+    <textarea id="locationAddress" placeholder="उदा. फ्लॅट नं. 402, श्री गणेश अपार्टमेंट्स, शिवाजीनगर पुणे - 411005"></textarea>
+</div>
+
+<div class="field full">
+    <label>
+        🗺️ Google Map Link
+    </label>
+    <input type="text" id="mapLink" placeholder="https://maps.google.com/...">
+</div>
+
+
+    <div class="field full">
+
+        <label>
+            Theme URL
+        </label>
+
+        <input
+            type="text"
+            id="theme">
+
+    </div>
+
+</div>
+
+
+<hr style="margin:40px 0;border-color:#333;">
+
+<h2>
+📝 Website Text Settings
+</h2>
+
+<div class="formGrid">
+
+    <!-- Opening Screen Heading -->
+    <div class="field full">
+
+        <label>
+            Opening Screen Heading
+
+            <span class="visibility-control">
+                <input
+                    type="checkbox"
+                    class="visibility-checkbox"
+                    data-field="openingHeading"
+                    checked>
+                
+            </span>
+        </label>
+
+        <input
+            type="text"
+            id="openingHeading">
+
+    </div>
+
+
+    <!-- Opening Screen Description -->
+    <div class="field full">
+
+        <label>
+            Opening Screen Description
+
+            <span class="visibility-control">
+                <input
+                    type="checkbox"
+                    class="visibility-checkbox"
+                    data-field="openingDescription"
+                    checked>
+                
+            </span>
+        </label>
+
+        <textarea
+            id="openingDescription"></textarea>
+
+    </div>
+
+
+    <!-- Open Invitation Button Text -->
+    <div class="field">
+
+        <label>
+            Open Invitation Button Text
+
+            <span class="visibility-control">
+                <input
+                    type="checkbox"
+                    class="visibility-checkbox"
+                    data-field="openButtonText"
+                    checked>
+                
+            </span>
+        </label>
+
+        <input
+            type="text"
+            id="openButtonText">
+
+    </div>
+
+
+    <!-- Wish Screen Heading -->
+    <div class="field full">
+
+        <label>
+            Wish Screen Heading
+
+            <span class="visibility-control">
+                <input
+                    type="checkbox"
+                    class="visibility-checkbox"
+                    data-field="wishScreenHeading"
+                    checked>
+                
+            </span>
+        </label>
+
+        <input
+            type="text"
+            id="wishScreenHeading">
+
+    </div>
+
+
+    <!-- Wish Popup Heading -->
+    <div class="field full">
+
+        <label>
+            Wish Popup Heading
+
+            <span class="visibility-control">
+                <input
+                    type="checkbox"
+                    class="visibility-checkbox"
+                    data-field="wishHeading"
+                    checked>
+                
+            </span>
+        </label>
+
+        <input
+            type="text"
+            id="wishHeading">
+
+    </div>
+
+
+    <!-- Name Label -->
+    <div class="field">
+
+        <label>
+            Name Label
+
+            <span class="visibility-control">
+                <input
+                    type="checkbox"
+                    class="visibility-checkbox"
+                    data-field="wishNameLabel"
+                    checked>
+                
+            </span>
+        </label>
+
+        <input
+            type="text"
+            id="wishNameLabel">
+
+    </div>
+
+
+    <!-- Name Placeholder -->
+    <div class="field">
+
+        <label>
+            Name Placeholder
+
+            <span class="visibility-control">
+                <input
+                    type="checkbox"
+                    class="visibility-checkbox"
+                    data-field="wishNamePlaceholder"
+                    checked>
+                
+            </span>
+        </label>
+
+        <input
+            type="text"
+            id="wishNamePlaceholder">
+
+    </div>
+
+
+    <!-- Message Label -->
+    <div class="field">
+
+        <label>
+            Message Label
+
+            <span class="visibility-control">
+                <input
+                    type="checkbox"
+                    class="visibility-checkbox"
+                    data-field="wishMessageLabel"
+                    checked>
+                
+            </span>
+        </label>
+
+        <input
+            type="text"
+            id="wishMessageLabel">
+
+    </div>
+
+
+    <!-- Message Placeholder -->
+    <div class="field">
+
+        <label>
+            Message Placeholder
+
+            <span class="visibility-control">
+                <input
+                    type="checkbox"
+                    class="visibility-checkbox"
+                    data-field="wishMessagePlaceholder"
+                    checked>
+                
+            </span>
+        </label>
+
+        <input
+            type="text"
+            id="wishMessagePlaceholder">
+
+    </div>
+
+
+    <!-- WhatsApp Button Text -->
+    <div class="field full">
+
+        <label>
+            WhatsApp Button Text
+
+            <span class="visibility-control">
+                <input
+                    type="checkbox"
+                    class="visibility-checkbox"
+                    data-field="wishWhatsappButton"
+                    checked>
+                
+            </span>
+        </label>
+
+        <input
+            type="text"
+            id="wishWhatsappButton">
+
+    </div>
+
+
+    <!-- Main Invitation Heading -->
+    <div class="field full">
+
+        <label>
+            Main Invitation Heading
+
+            <span class="visibility-control">
+                <input
+                    type="checkbox"
+                    class="visibility-checkbox"
+                    data-field="mainHeading"
+                    checked>
+                
+            </span>
+        </label>
+
+        <input
+            type="text"
+            id="mainHeading">
+
+    </div>
+
+
+    <!-- Main Invitation Description -->
+    <div class="field full">
+
+        <label>
+            Main Invitation Description
+
+            <span class="visibility-control">
+                <input
+                    type="checkbox"
+                    class="visibility-checkbox"
+                    data-field="mainDescription"
+                    checked>
+                
+            </span>
+        </label>
+
+        <textarea
+            id="mainDescription"></textarea>
+
+    </div>
+
+</div>
+
+
+<button
+id="saveBtn"
+class="primaryBtn">
+
+💾 Save Invitation
+
+</button>
+
+
+
+
+<button
+id="deleteBtn"
+class="logoutBtn">
+
+🗑 Delete Customer
+
+</button>
+
+
+
+
+</div>
+
+<!-- ===========================
+     GALLERY SECTION (Hidden - Direct Redirect)
+=========================== -->
+
+<div id="gallerySection" style="display:none;">
+    <!-- हा section फक्त redirect साठी आहे, content नाही -->
+</div>
+
+</section>
+
+    </main>
+
+</div>
+
+<script type="module" src="admin-back.js"></script>
+
+<script type="module" src="customer-dashboard.js"></script>
+
+</body>
+</html>

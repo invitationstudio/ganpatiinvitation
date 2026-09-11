@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Gallery Manager</title>
+
+
+
+<link rel="stylesheet" href="admin.css">
+
+</head>
+
+
+<body>
+
+
+<div class="galleryPage">
+
+
+
+<div class="galleryContainer">
+
+
+
+<h2 id="customerInfo">
+Loading Customer...
+</h2>
+
+
+
+<div class="galleryHeader">
+
+
+<h1>
+🖼 Gallery Manager V3
+</h1>
+
+
+</div>
+
+
+
+
+
+
+<div class="galleryUploadBox">
+
+
+
+<h2>
+📸 Gallery Images 📸
+</h2>
+
+
+
+<input
+type="file"
+id="galleryFile"
+accept="image/*"
+multiple>
+
+
+
+
+<button
+id="uploadBtn"
+class="primaryBtn">
+
+☁ Upload Images
+
+</button>
+
+
+
+</div>
+
+
+
+<!-- ==========================================
+     WISH SCREEN IMAGE
+========================================== -->
+
+<div class="galleryUploadBox">
+
+    <h2>
+        🙏 Wish Screen PNG
+    </h2>
+
+    <p>
+        Upload PNG image for Wish Screen
+    </p>
+
+    <input
+        type="file"
+        id="wishScreenImage"
+        accept="image/png,image/*">
+
+    <button
+        id="uploadWishScreenBtn"
+        class="primaryBtn">
+
+        ☁ Upload Wish Screen PNG
+
+    </button>
+
+</div>
+
+
+<div class="galleryListBox">
+
+    <h2>
+        👁 Wish Screen Preview
+    </h2>
+
+    <img
+        id="wishScreenPreview"
+        style="display:none;max-width:100%;max-height:400px;object-fit:contain;"
+        alt="Wish Screen Preview">
+
+</div>
+
+
+<!-- ==========================================
+     HERO PAGE IMAGE
+========================================== -->
+
+<div class="galleryUploadBox">
+
+    <h2>
+        🎨 Hero Page PNG
+    </h2>
+
+    <p>
+        Upload PNG image for Open Main Invitation Page
+    </p>
+
+    <input
+        type="file"
+        id="heroImage"
+        accept="image/png,image/*">
+
+    <button
+        id="uploadHeroImageBtn"
+        class="primaryBtn">
+
+        ☁ Upload Hero PNG
+
+    </button>
+
+</div>
+
+
+<div class="galleryListBox">
+
+    <h2>
+        👁 Hero Image Preview
+    </h2>
+
+    <img
+        id="heroImagePreview"
+        style="display:none;max-width:100%;max-height:400px;object-fit:contain;"
+        alt="Hero Image Preview">
+
+</div>
+
+
+<!-- ==========================================
+     MAIN INVITATION IMAGE
+========================================== -->
+
+<div class="galleryUploadBox">
+
+    <h2>
+        🪔 Main Invitation PNG
+    </h2>
+
+    <p>
+        Upload PNG image for Main Invitation
+    </p>
+
+    <input
+        type="file"
+        id="mainInvitationImage"
+        accept="image/png,image/*">
+
+    <button
+        id="uploadMainInvitationBtn"
+        class="primaryBtn">
+
+        ☁ Upload Main Invitation PNG
+
+    </button>
+
+</div>
+
+
+<div class="galleryListBox">
+
+    <h2>
+        👁 Main Invitation Preview
+    </h2>
+
+    <img
+        id="mainInvitationPreview"
+        style="display:none;max-width:100%;max-height:400px;object-fit:contain;"
+        alt="Main Invitation Preview">
+
+</div>
+
+
+
+<div class="galleryListBox">
+
+
+<h2>
+🖼 Uploaded Gallery
+</h2>
+
+
+
+<div
+id="galleryGrid"
+class="galleryGrid">
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<button
+id="backBtn"
+class="logoutBtn">
+
+⬅ Back
+
+</button>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<script type="module" src="admin-back.js"></script>
+
+
+<script type="module" src="gallery-manager.js"></script>
+
+
+
+</body>
+
+</html>

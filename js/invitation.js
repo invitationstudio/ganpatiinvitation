@@ -387,7 +387,8 @@ function applyEventDateVisibility(visible){
 }
 
 /* ==========================================
-   Open Invitation Button
+   Open Invitation Button — Music Auto Play
+   (Default Fallback सह)
 ========================================== */
 
 const openBtn = document.getElementById("openInvitation");
@@ -419,29 +420,112 @@ if (openBtn) {
         const musicBtn = document.getElementById("musicBtn");
         const voiceOver = document.getElementById("voiceOver");
 
-        if(voiceOver && invitation.music && invitation.music.voiceOver){
+        /* ============================================================
+           🔥 DEFAULT MUSIC PATHS (तुमच्या assets/music/ folder मधून)
+        ============================================================ */
 
-            voiceOver.src = invitation.music.voiceOver;
+        // 🔥 तुमच्या actual file नावांनुसार
+        const DEFAULT_BG_MUSIC = "assets/music/bg.mp3";
+        const DEFAULT_VOICE_OVER = "assets/voice/voiceover.mp3";  // जर असेल तर
+
+        // Admin मधून Music URLs
+        let bgMusicUrl = "";
+        let voiceOverUrl = "";
+
+        if (invitation.music) {
+            bgMusicUrl = invitation.music.bgMusic || "";
+            voiceOverUrl = invitation.music.voiceOver || "";
+        }
+
+        // 🔥 जर Admin मध्ये URL नसेल तर Default वापरा
+        if (!bgMusicUrl || bgMusicUrl.trim() === "" || !bgMusicUrl.startsWith("http")) {
+            bgMusicUrl = DEFAULT_BG_MUSIC;
+            console.log("⚠️ Using Default Background Music:", DEFAULT_BG_MUSIC);
+        }
+
+        /* ============================================================
+           🔥 Voice Over
+        ============================================================ */
+
+        // Voice Over URL check (जर Admin मधून नसेल तर skip)
+        const hasVoiceOver = 
+            voiceOver && 
+            voiceOverUrl && 
+            voiceOverUrl.trim() !== "" && 
+            voiceOverUrl.startsWith("http");
+
+        if (hasVoiceOver) {
+
+            voiceOver.src = voiceOverUrl;
+            voiceOver.volume = 1;
             voiceOver.currentTime = 0;
-            voiceOver.play().catch(()=>{});
 
-            voiceOver.onended = ()=>{
-                if(bgMusic && invitation.music.bgMusic){
-                    bgMusic.src = invitation.music.bgMusic;
-                    bgMusic.play().catch(()=>{});
+            voiceOver.play().then(() => {
+                console.log("✅ Voice Over Started");
+            }).catch((error) => {
+                console.log("❌ Voice Over Failed:", error.message);
+                
+                // Voice fail झाला तर Background Music Play करा
+                if (bgMusic && bgMusicUrl) {
+                    bgMusic.src = bgMusicUrl;
+                    bgMusic.volume = 0.5;
+                    bgMusic.currentTime = 0;
+                    
+                    bgMusic.play().then(() => {
+                        console.log("✅ Background Music Started (Fallback)");
+                        if (musicBtn) {
+                            musicBtn.textContent = "⏸️";
+                            musicBtn.classList.add("playing");
+                        }
+                    }).catch((err) => {
+                        console.log("❌ Background Music Failed:", err.message);
+                    });
+                }
+            });
+
+            // Voice संपल्यावर Background Music सुरू करा
+            voiceOver.onended = () => {
+                if (bgMusic && bgMusicUrl) {
+                    bgMusic.src = bgMusicUrl;
+                    bgMusic.volume = 0.5;
+                    bgMusic.currentTime = 0;
+
+                    bgMusic.play().then(() => {
+                        console.log("✅ Background Music Started (after voice)");
+                        if (musicBtn) {
+                            musicBtn.textContent = "⏸️";
+                            musicBtn.classList.add("playing");
+                        }
+                    }).catch((error) => {
+                        console.log("❌ Background Music Failed:", error.message);
+                    });
                 }
             };
 
         } else {
-            if(bgMusic && invitation.music && invitation.music.bgMusic){
-                bgMusic.src = invitation.music.bgMusic;
-                bgMusic.play().catch(()=>{});
-            }
-        }
+            
+            /* ============================================================
+               🔥 Voice Over नसल्यास Direct Background Music
+            ============================================================ */
+            
+            console.log("⚠️ Voice Over URL नाही — Direct Background Music");
+            
+            if (bgMusic && bgMusicUrl) {
+                bgMusic.src = bgMusicUrl;
+                bgMusic.volume = 0.5;
+                bgMusic.currentTime = 0;
 
-        if (musicBtn) {
-            musicBtn.textContent = "⏸️";
-            musicBtn.classList.add("playing");
+                bgMusic.play().then(() => {
+                    console.log("✅ Background Music Started:", bgMusicUrl);
+                    if (musicBtn) {
+                        musicBtn.textContent = "⏸️";
+                        musicBtn.classList.add("playing");
+                    }
+                }).catch((error) => {
+                    console.log("❌ Background Music Failed:", error.message);
+                });
+            }
+
         }
 
     });

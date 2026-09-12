@@ -1906,10 +1906,11 @@ inset 0 -3px 8px rgba(0,0,0,.2);
     background: linear-gradient(145deg, #fdf4d8 0%, #fce8a8 50%, #f5d76e 100%);
     border: 3px solid #d4af37;
     border-radius: 25px;
+    top: 40px;
     
     /* 🔥 WIDTH - इथे बदला */
     width: 360px;
-    height: 180px;              /* आत्ताचा आकार */
+    height: 120px;              /* आत्ताचा आकार */
     /* width: 300px; */       /* कमी करायचा असेल तर */
     /* width: 420px; */       /* जास्त करायचा असेल तर */
     
@@ -1956,7 +1957,7 @@ inset 0 -3px 8px rgba(0,0,0,.2);
 .left-flower {
     position: absolute;
     left: 5px;
-    top: 15%;
+    top: 45%;
     transform: translateY(-50%);
     width: 40px;
     height: auto;
@@ -1965,7 +1966,7 @@ inset 0 -3px 8px rgba(0,0,0,.2);
 .right-flower {
     position: absolute;
     right: 5px;
-    top: 15%;
+    top: 45%;
     transform: translateY(-50%);
     width: 40px;
     height: auto;
@@ -1980,10 +1981,11 @@ inset 0 -3px 8px rgba(0,0,0,.2);
         
         /* 🔥 Mobile वर Width बदलण्यासाठी */
         width: 320px;
-        height: 80px;
+        height: 100px;
         margin-left: -4px;
         /* width: 250px; */  /* कमी */
         /* width: 320px; */  /* जास्त */
+    
     }
     
     .familyBox .family {
@@ -1996,12 +1998,12 @@ inset 0 -3px 8px rgba(0,0,0,.2);
 }
 @media (max-width: 600px) {
     .left-flower {
-        top: 35px;
+        top: 45px;
         left: 5px;
     }
     
     .right-flower {
-        top: 35px;
+        top: 45px;
         left: 238px;
     }
 }
@@ -2377,13 +2379,14 @@ inset 0 -3px 8px rgba(0,0,0,.2);
 .letterSectionGanpati {
     position: relative;
     width: 100%;
-    padding: 80px 20px;
+    padding: 30px 20px 10px;
     text-align: center;
     background: transparent !important;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: -150px;       /* 🔥 Gap खूप कमी */
 }
 
 /* Envelope */
@@ -2660,6 +2663,135 @@ inset 0 -3px 8px rgba(0,0,0,.2);
         height: 44px;
         font-size: 11px;
         margin-top: 20px;
+        margin-left: 5px;
+    }
+
+}
+/* ==========================================================
+   COUNTDOWN - Family Box पासून खाली
+========================================================== */
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    
+    /* 🔥 Countdown खाली सरकवण्यासाठी */
+    margin-top: 80px;        /* वरचा gap वाढवला (आधी 30px होता) */
+    margin-bottom: 30px;
+    
+    width: 100%;
+    padding: 0 10px;
+    flex-wrap: nowrap;
+}
+
+.countdown .box {
+    width: 65px;
+    height: 65px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    background: #1b1b1b;
+    border: 2px solid #d4af37;
+    border-radius: 12px;
+    
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.countdown .box span {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFD700;
+    line-height: 1;
+    margin-bottom: 3px;
+}
+
+.countdown .box small {
+    color: white;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1;
+}
+
+/* ==========================================================
+   MOBILE VIEW - Countdown + Envelope जवळ
+========================================================== */
+
+@media (max-width: 768px) {
+
+    /* 🔥 Countdown खालचा gap कमी */
+    .countdown {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        
+        margin-top: 60px;       /* Family Box पासून खाली */
+        margin-bottom: 0px;     /* 🔥 Envelope जवळ आणण्यासाठी */
+        
+        width: 100%;
+        padding: 0 8px;
+        flex-wrap: nowrap;
+    }
+
+    .countdown .box {
+        width: 60px;
+        height: 60px;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        background: #1b1b1b;
+        border: 2px solid #d4af37;
+        border-radius: 10px;
+        
+        padding: 0;
+        flex-shrink: 0;
+    }
+
+    .countdown .box span {
+        font-size: 18px;
+        font-weight: bold;
+        color: #FFD700;
+        line-height: 1;
+        margin-bottom: 3px;
+    }
+
+    .countdown .box small {
+        color: white;
+        font-size: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        line-height: 1;
+    }
+
+    /* 🔥 Envelope Section चा वरचा gap कमी */
+    .letterSectionGanpati {
+        padding: 0px 15px 10px;    /* 🔥 वरचा padding 0 */
+        margin-top: 0px;            /* 🔥 वरचा margin 0 */
+        margin-bottom: -80px;
+    }
+
+    /* 🔥 Envelope चा वरचा margin कमी */
+    .letterEnvelopeGanpati {
+        height: 220px;
+        margin: 0 auto;
+        padding-top: 0px;           /* 🔥 वरचा padding 0 */
+    }
+
+    .envelopeGanpati {
+        width: min(310px, 90%);
+        height: 205px;
+        margin-top: 0px;            /* 🔥 0 केला */
     }
 
 }

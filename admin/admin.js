@@ -398,104 +398,73 @@ if(createCustomerBtn){
 
 createCustomerBtn.onclick = async()=>{
 
-
     const id =
     document.getElementById("newCustomerId").value.trim();
-
 
     const family =
     document.getElementById("newCustomerFamily").value.trim();
 
-
     const title =
     document.getElementById("newCustomerTitle").value.trim();
 
-
-
     if(!id){
-
         alert("Customer ID Required");
-
         return;
-
     }
 
-    // Validate ID format (only letters, numbers, dashes, underscores)
     if(!/^[a-zA-Z0-9-_]+$/.test(id)){
         alert("Customer ID can only contain letters, numbers, dashes, and underscores");
         return;
     }
 
-
-
     try{
 
-
         await setDoc(
-
             doc(db,"customers",id),
-
             {
-
                 id:id,
-
                 family:family,
-
                 title:title,
-
                 gallery:[],
 
+                /* ===========================
+                   🔥 DEFAULT MUSIC + VOICE
+                   (आपोआप apply होईल)
+                =========================== */
+
                 music:{
+                    enabled: true,
 
-                    enabled:false,
+                    // 🔥 Default Background Music
+                    bgMusic: "assets/music/bg.mp3",
 
-                    bgMusic:"",
+                    // 🔥 Default Bell Music
+                    bellMusic: "assets/music/bell.mp3",
 
-                    bellMusic:"",
+                    // 🔥 Default Voice Over
+                    voiceOver: "assets/music/voiceover.mp3",
 
-                    voiceOver:""
-
+                    // 🔥 Default Shubhechha Voice
+                    shubhechhaVoice: "assets/music/shubhechha.mp3"
                 },
 
                 theme:"",
-
                 texts:{},
-
                 visibility:{},
-
                 views:0,
-
                 shares:0,
-
                 createdAt: new Date().toISOString()
-
             }
-
         );
 
-
-
-        alert("Customer Created ✅");
-
-
+        alert("Customer Created ✅\n\nDefault Music + Voice आपोआप apply झाले आहेत.");
         location.reload();
 
-
-
     }
-
-
     catch(error){
-
-
         console.error(error);
-
         alert("Create Failed: " + error.message);
-
-
     }
-
-
 
 };
 

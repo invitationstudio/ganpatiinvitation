@@ -510,8 +510,8 @@ document
 
     // ✅ तुमचा खरा GitHub Pages Link
     const link =
-        "https://invitationstudio.github.io/ganpatiinvitation.github.io/invitation.html?customer=" +
-        encodeURIComponent(customerId);
+    "https://invitationstudio.github.io/ganpatiinvitation/invitation.html?customer=" +
+    encodeURIComponent(customerId);
 
     if (
         navigator.clipboard &&

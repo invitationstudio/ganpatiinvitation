@@ -52,53 +52,41 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 
 
-<!-- DOOR -->
+<!-- ============================================================
+     1. DOOR (उघडणारे दार)
+============================================================ -->
 
 <div id="door">
 
-<div class="left-door"></div>
+    <div class="left-door"></div>
 
-<div class="right-door"></div>
+    <div class="right-door"></div>
 
 </div>
 
 
 
 
-<!-- WISH SCREEN -->
-
+<!-- ============================================================
+     2. WISH SCREEN (Page उघडताच दिसते)
+     
+     🔥 TEXT बदलायचा असेल तर: wishScreenHeading
+============================================================ -->
 
 <div id="wishScreen">
 
+    <div class="wishBox">
 
-<div class="wishBox">
+        <img src="assets/images/ganpati-hero.png" 
+             class="wishGanpati" 
+             alt="Ganpati">
 
+        <!-- 🔥 WISH SCREEN TEXT (फक्त हा बदल) -->
+        <h3 id="wishScreenHeading">
+            गणेश चतुर्थीच्या हार्दिक शुभेच्छा
+        </h3>
 
-<img
-src="assets/images/ganpati-hero.png"
-class="wishGanpati"
-alt="Ganpati">
-
-
-
-<h2 id="wishScreenHeading">
-आपणास व आपल्या संपूर्ण
-</h2>
-
-
-<h1>
-कुटुंबास
-</h1>
-
-
-<h3>
-गणेश चतुर्थीच्या हार्दिक शुभेच्छा
-</h3>
-
-
-
-</div>
-
+    </div>
 
 </div>
 
@@ -107,271 +95,319 @@ alt="Ganpati">
 
 
 
-<!-- HERO -->
+<!-- ============================================================
+     3. HERO SECTION (Wish Screen नंतर दिसते)
+     
+     🔥 TEXT बदलायचा असेल तर:
+        - openingHeading (h3)
+        - mainHeading (h2)
+        - openingDescription (p)
+        - openInvitation (button)
+============================================================ -->
 
-
-<!-- HERO -->
 <section class="hero" id="hero">
+
     <div class="overlay"></div>
+
     <div class="content">
-        <img src="assets/images/ganpati.png" class="heroGanpati" alt="Ganpati">
-        
-        <!-- फक्त हेच ठेवा (एकदाच) -->
-        <h3 id="openingHeading">॥ श्री गणेशाय नमः ॥</h3>
-        
-        <h2 id="mainHeading">गणेश चतुर्थीच्या<br>हार्दिक शुभेच्छा</h2>
-        <p id="openingDescription">आमच्या घरी आयोजित श्री गणेश उत्सवाच्या मंगल प्रसंगी आपण सहकुटुंब उपस्थित राहावे ही नम्र विनंती.</p>
-        <button class="inviteBtn" id="openInvitation">Open Main Invitation</button>
-    </div>
-</section>
 
-
-
-
-
-
-<!-- MAIN INVITATION -->
-
-
-<section
-class="mainInvitation"
-id="mainInvitation">
-
-
-
-<div id="themeBackground"></div>
-
-
-
-
-<div class="card">
-
-
-
-<img
-id="ganpatiImg"
-class="ganpati"
-src="assets/images/ganpati.png"
-alt="Ganpati">
-
-
-
-<h4 id="mainDescription">
-श्री गणेशाय नमः
-</h4>
-
-<h1 id="title"></h1>
-
-<!-- Family Name खाली वेगळ्या Box मध्ये -->
-<div class="familyBox" id="familyBox">
-    <p class="family" id="family"></p>
-    <img src="assets/images/flowers/flower3.png" class="left-flower" alt="Flower">
-    <p class="family" id="family"></p>
-    <img src="assets/images/flowers/flower3.png" class="right-flower" alt="Flower">
-</div>
-
-
-
-
-<div class="countdown">
-
-
-<div class="box">
-
-<span id="days">
-00
-</span>
-
-<small>
-Days
-</small>
-
-</div>
-
-
-
-<div class="box">
-
-<span id="hours">
-00
-</span>
-
-<small>
-Hours
-</small>
-
-</div>
-
-
-
-<div class="box">
-
-<span id="minutes">
-00
-</span>
-
-<small>
-Minutes
-</small>
-
-</div>
-
-
-
-<div class="box">
-
-<span id="seconds">
-00
-</span>
-
-<small>
-Seconds
-</small>
-
-</div>
-
-
-</div>
-
-<!-- =====================
-     SHUBHECHHA ENVELOPE
-===================== -->
-
-<div id="letterSection" class="letterSectionGanpati">
-
-    <!-- Envelope -->
-    <div id="letterEnvelope" class="letterEnvelopeGanpati">
-
-        <div class="envelopeGanpati">
-
-            <img src="assets/images/envelope.png"
-                 alt="Shubhechha Envelope"
-                 class="envelopeImageGanpati">
-
-            <button id="openLetterBtn"
-                    class="envelopeRoundButtonGanpati"
-                    type="button"
-                    onclick="openLetterGanpati()">
-
-                <span>Open</span>
-
-            </button>
-
-        </div>
-
-    </div>
-
-
-    <!-- Actual Letter -->
-    <div id="letterCard" class="letterCardGanpati" style="display:none;">
-
-        <div class="letterPaperGanpati">
-
-            <div class="letterTopDecorationGanpati">
-                ✦ ❤️ ✦
-            </div>
-
-            <h3>
-                🙏 शुभेच्छा संदेश 🙏
-            </h3>
-
-            <p>
-                गणेशोत्सवाच्या या मंगल प्रसंगी,
-                आपणास व आपल्या संपूर्ण कुटुंबास
-                हार्दिक शुभेच्छा!
-            </p>
-
-            <p>
-                श्री गणरायाच्या कृपेने
-                आपल्या आयुष्यात नेहमी
-                आनंद, समृद्धी आणि सुख
-                नांदत राहो.
-            </p>
-
-            <p>
-                आपली उपस्थिती आमच्यासाठी
-                सर्वात मोठा आशीर्वाद आहे.
-            </p>
-
-            <p class="letterEndingGanpati">
-                🙏 गणपती बाप्पा मोरया 🙏
-            </p>
-
-            <div class="letterSealGanpati">
-                🙏
-            </div>
-
-        </div>
-
-        <button id="closeLetterBtn"
-                class="secondaryButtonGanpati"
-                type="button"
-                onclick="closeLetterGanpati()">
-
-            CLOSE LETTER
-
+        <img src="assets/images/ganpati.png" 
+             class="heroGanpati" 
+             alt="Ganpati">
+
+        <!-- 🔥 HERO HEADING (h3) -->
+        <h3 id="openingHeading">
+            ॥ श्री गणेशाय नमः ॥
+        </h3>
+
+        <!-- 🔥 HERO MAIN HEADING (h2) -->
+        <h2 id="mainHeading">
+            गणेश चतुर्थीच्या<br>
+            हार्दिक शुभेच्छा
+        </h2>
+
+        <!-- 🔥 HERO DESCRIPTION (p) -->
+        <p id="openingDescription">
+            आमच्या घरी आयोजित श्री गणेश उत्सवाच्या
+            मंगल प्रसंगी आपण सहकुटुंब उपस्थित राहावे
+            ही नम्र विनंती.
+        </p>
+
+        <!-- 🔥 OPEN BUTTON TEXT -->
+        <button class="inviteBtn" id="openInvitation">
+            Open Main Invitation
         </button>
 
     </div>
 
-</div>
-
-<audio id="voiceOverShubhechha" preload="auto"></audio>
+</section>
 
 
-<!-- ===================== LOCATION ===================== -->
-<section id="location" class="location-section">
-    <div class="section-decor">✦</div>
-    <p class="section-kicker">आपली भेटीची जागा</p>
-    <h2>सोहळ्याचे <span>स्थळ</span></h2>
 
-    <div class="map-card reveal" id="mapCard">
-        <!-- Real Satellite Map Embed -->
-        <iframe 
-            id="mapIframe"
-            src="https://www.google.com/maps?q=Pune&t=k&z=15&output=embed" 
-            width="100%" 
-            height="400" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy">
-        </iframe>
-        
-        <div class="map-info">
-            <span id="locationName">स्थळाचे नाव</span>
-            <strong id="locationAddress">संपूर्ण पत्ता येथे लिहा</strong>
-            <small id="mapLinkText">Google Map उघडण्यासाठी क्लिक करा ↗</small>
+
+
+
+<!-- ============================================================
+     4. MAIN INVITATION (Main Page)
+     
+     🔥 TEXT बदलायचा असेल तर:
+        - mainDescription (h4)
+        - title (h1) — Admin मधून
+        - family — Admin मधून
+============================================================ -->
+
+<section class="mainInvitation" id="mainInvitation">
+
+    <div id="themeBackground"></div>
+
+    <div class="card">
+
+        <img id="ganpatiImg"
+             class="ganpati"
+             src="assets/images/ganpati.png"
+             alt="Ganpati">
+
+        <!-- 🔥 CARD HEADING (h4) -->
+        <h4 id="mainDescription">
+            श्री गणेशाय नमः
+        </h4>
+
+        <!-- 🔥 TITLE (h1) — Admin मधून येतो -->
+        <h1 id="title"></h1>
+
+        <!-- 🔥 FAMILY NAME BOX -->
+        <div class="familyBox" id="familyBox">
+
+            <img src="assets/images/flowers/flower3.png" 
+                 class="left-flower" 
+                 alt="Flower">
+
+            <p class="family" id="family"></p>
+
+            <img src="assets/images/flowers/flower3.png" 
+                 class="right-flower" 
+                 alt="Flower">
+
         </div>
+
+
+
+
+        <!-- ============================================================
+             5. COUNTDOWN
+             
+             🔥 TEXT बदलायचा असेल तर: Days, Hours, Minutes, Seconds
+        ============================================================ -->
+
+        <div class="countdown">
+
+            <div class="box">
+                <span id="days">00</span>
+                <small>Days</small>
+            </div>
+
+            <div class="box">
+                <span id="hours">00</span>
+                <small>Hours</small>
+            </div>
+
+            <div class="box">
+                <span id="minutes">00</span>
+                <small>Minutes</small>
+            </div>
+
+            <div class="box">
+                <span id="seconds">00</span>
+                <small>Seconds</small>
+            </div>
+
+        </div>
+
+
+
+
+        <!-- ============================================================
+             6. SHUBHECHHA ENVELOPE + LETTER
+             
+             🔥 TEXT बदलायचा असेल तर:
+                - "Open" (button)
+                - "🙏 शुभेच्छा संदेश 🙏" (h3)
+                - Letter चे सगळे Paragraphs
+                - "🙏 गणपती बाप्पा मोरया 🙏"
+                - "CLOSE LETTER" (button)
+        ============================================================ -->
+
+        <div id="letterSection" class="letterSectionGanpati">
+
+            <!-- Envelope -->
+            <div id="letterEnvelope" class="letterEnvelopeGanpati">
+
+                <div class="envelopeGanpati">
+
+                    <img src="assets/images/envelope.png"
+                         alt="Shubhechha Envelope"
+                         class="envelopeImageGanpati">
+
+                    <!-- 🔥 OPEN BUTTON TEXT -->
+                    <button id="openLetterBtn"
+                            class="envelopeRoundButtonGanpati"
+                            type="button"
+                            onclick="openLetterGanpati()">
+
+                        <span>Open</span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Actual Letter -->
+            <div id="letterCard" 
+                 class="letterCardGanpati" 
+                 style="display:none;">
+
+                <div class="letterPaperGanpati">
+
+                    <div class="letterTopDecorationGanpati">
+                        ✦ ❤️ ✦
+                    </div>
+
+                    <!-- 🔥 LETTER HEADING -->
+                    <h3>
+                        🙏 शुभेच्छा संदेश 🙏
+                    </h3>
+
+                    <!-- 🔥 LETTER PARAGRAPH 1 -->
+                    <p>
+                        गणेशोत्सवाच्या या मंगल प्रसंगी,
+                        आपणास व आपल्या संपूर्ण कुटुंबास
+                        हार्दिक शुभेच्छा!
+                    </p>
+
+                    <!-- 🔥 LETTER PARAGRAPH 2 -->
+                    <p>
+                        श्री गणरायाच्या कृपेने
+                        आपल्या आयुष्यात नेहमी
+                        आनंद, समृद्धी आणि सुख
+                        नांदत राहो.
+                    </p>
+
+                    <!-- 🔥 LETTER PARAGRAPH 3 -->
+                    <p>
+                        आपली उपस्थिती आमच्यासाठी
+                        सर्वात मोठा आशीर्वाद आहे.
+                    </p>
+
+                    <!-- 🔥 LETTER ENDING -->
+                    <p class="letterEndingGanpati">
+                        🙏 गणपती बाप्पा मोरया 🙏
+                    </p>
+
+                    <div class="letterSealGanpati">
+                        🙏
+                    </div>
+
+                </div>
+
+                <!-- 🔥 CLOSE BUTTON TEXT -->
+                <button id="closeLetterBtn"
+                        class="secondaryButtonGanpati"
+                        type="button"
+                        onclick="closeLetterGanpati()">
+
+                    CLOSE LETTER
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <audio id="voiceOverShubhechha" preload="auto"></audio>
+
+
+
+
+        <!-- ============================================================
+             7. LOCATION SECTION
+             
+             🔥 TEXT बदलायचा असेल तर:
+                - "आपली भेटीची जागा"
+                - "सोहळ्याचे स्थळ"
+                - locationName, locationAddress — Admin मधून
+                - "Google Map उघडण्यासाठी क्लिक करा ↗"
+        ============================================================ -->
+
+        <section id="location" class="location-section">
+
+            <div class="section-decor">✦</div>
+
+            <!-- 🔥 LOCATION KICKER -->
+            <p class="section-kicker">
+                आपली भेटीची जागा
+            </p>
+
+            <!-- 🔥 LOCATION HEADING -->
+            <h2>
+                सोहळ्याचे <span>स्थळ</span>
+            </h2>
+
+            <div class="map-card reveal" id="mapCard">
+
+                <iframe 
+                    id="mapIframe"
+                    src="https://www.google.com/maps?q=Pune&t=k&z=15&output=embed" 
+                    width="100%" 
+                    height="400" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+
+                <div class="map-info">
+
+                    <span id="locationName">स्थळाचे नाव</span>
+
+                    <strong id="locationAddress">
+                        संपूर्ण पत्ता येथे लिहा
+                    </strong>
+
+                    <small id="mapLinkText">
+                        Google Map उघडण्यासाठी क्लिक करा ↗
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+
+        <!-- ============================================================
+             8. GALLERY
+             
+             🔥 TEXT बदलायचा असेल तर: "📸 MOMEROY 📸"
+        ============================================================ -->
+
+        <section class="gallery">
+
+            <!-- 🔥 GALLERY HEADING -->
+            <h2>
+                📸 MOMEROY 📸
+            </h2>
+
+            <div id="galleryGrid" class="gallery-grid"></div>
+
+        </section>
+
+
+
+
     </div>
-</section>
-
-
-<!-- GALLERY -->
-
-<section class="gallery">
-
-
-<h2>
-📸 MOMEROY 📸
-</h2>
-
-
-
-<div
-id="galleryGrid"
-class="gallery-grid">
-
-
-</div>
-
-
-
-</section>
-
-
-
-</div>
-
 
 </section>
 
@@ -380,233 +416,158 @@ class="gallery-grid">
 
 
 
-<!-- EFFECTS -->
-
+<!-- ============================================================
+     9. EFFECTS (Flowers, Light)
+============================================================ -->
 
 <div class="petals"></div>
 
-
 <div id="flowerContainer"></div>
-
 
 <div id="goldLight"></div>
 
 
 
 
+<!-- ============================================================
+     10. AUDIO
+============================================================ -->
 
+<audio id="bell" preload="auto"></audio>
 
-<!-- AUDIO -->
+<audio id="voiceOver" preload="auto"></audio>
 
-
-
-<audio
-id="bell"
-preload="auto">
-
-</audio>
-
-
-
-<audio
-id="voiceOver"
-preload="auto">
-
-</audio>
-
-
-
-
-<audio
-id="bgMusic"
-loop>
-
-</audio>
-
-
-
+<audio id="bgMusic" loop></audio>
 
 <button id="musicBtn" title="Music" aria-label="Toggle Music">
-
-🔊
-
+    🔊
 </button>
 
 
 
 
-
-
-<!-- =====================
-     AARTI POPUP
-===================== -->
-
+<!-- ============================================================
+     11. AARTI POPUP
+     
+     🔥 TEXT बदलायचा असेल तर:
+        - "🙏 आरती संग्रह"
+        - "⏹️ Stop Aarti"
+============================================================ -->
 
 <div id="aartiPopup">
 
+    <div class="aartiBox">
 
+        <div class="aartiHeader">
 
-<div class="aartiBox">
+            <!-- 🔥 AARTI HEADING -->
+            <h2>
+                🙏 आरती संग्रह
+            </h2>
 
+            <button id="closeAarti" aria-label="Close Aarti">
+                ✖
+            </button>
 
+        </div>
 
-<div class="aartiHeader">
+        <div id="aartiListPopup"></div>
 
+        <!-- 🔥 STOP AARTI BUTTON -->
+        <button id="stopAartiBtn" class="stopAartiBtn">
+            ⏹️ Stop Aarti
+        </button>
 
-
-<h2>
-🙏 आरती संग्रह
-</h2>
-
-
-
-
-<button
-id="closeAarti"
-aria-label="Close Aarti">
-
-✖
-
-</button>
-
-
+    </div>
 
 </div>
 
-
-
-
-<div
-id="aartiListPopup">
-
-
-</div>
-
-<button id="stopAartiBtn" class="stopAartiBtn">
-    ⏹️ Stop Aarti
-</button>
-
-
-</div>
-
-
-</div>
+<audio id="aartiPlayer"></audio>
 
 
 
 
-<audio
-id="aartiPlayer">
-
-</audio>
-
-
-
-
-
-
-<!-- IMAGE VIEWER -->
-
+<!-- ============================================================
+     12. IMAGE VIEWER
+============================================================ -->
 
 <div id="viewer">
 
+    <span id="closeViewer" aria-label="Close Viewer">
+        &times;
+    </span>
 
-
-<span
-id="closeViewer"
-aria-label="Close Viewer">
-
-&times;
-
-</span>
-
-
-
-<img
-id="viewerImg"
-alt="Viewer Image">
-
+    <img id="viewerImg" alt="Viewer Image">
 
 </div>
 
 
 
 
+<!-- ============================================================
+     13. HIDDEN ADMIN
+============================================================ -->
 
-
-<!-- HIDDEN ADMIN -->
-
-
-<a
-href="admin/login.html"
-class="hiddenAdmin"
-aria-label="Admin Login">
-
-🔐
-
+<a href="admin/login.html" 
+   class="hiddenAdmin" 
+   aria-label="Admin Login">
+    🔐
 </a>
 
 
 
 
+<!-- ============================================================
+     14. OPEN BUTTON
+============================================================ -->
 
-
-<!-- OPEN BUTTON -->
-
-
-<button
-id="enterBtn"
-aria-label="Open Invitation">
-
-OPEN
-
+<button id="enterBtn" aria-label="Open Invitation">
+    OPEN
 </button>
 
 
 
 
-
-
-<!-- AARTI BUTTON -->
-
+<!-- ============================================================
+     15. AARTI BUTTON
+============================================================ -->
 
 <button id="aartiBtn" title="Aarti" aria-label="Open Aarti">
 
-    <img
-        src="assets/images/om.png"
-        alt="Aarti">
+    <img src="assets/images/om.png" alt="Aarti">
 
 </button>
 
 
 <div id="wishesContainer"></div>
 
-<!-- ENQUIRY -->
 
 
-<a
-href="https://wa.me/917875236545?text=मला गणपती निमंत्रण वेबसाइट बनवायची आहे."
-target="_blank"
-rel="noopener noreferrer"
-class="enquiryBtn"
-title="WhatsApp Enquiry">
 
+<!-- ============================================================
+     16. ENQUIRY BUTTON
+============================================================ -->
 
-<i class="fa-brands fa-whatsapp"></i>
+<a href="https://wa.me/917875236545?text=मला गणपती निमंत्रण वेबसाइट बनवायची आहे."
+   target="_blank"
+   rel="noopener noreferrer"
+   class="enquiryBtn"
+   title="WhatsApp Enquiry">
 
+    <i class="fa-brands fa-whatsapp"></i>
 
 </a>
 
 
 
 
-
+<!-- ============================================================
+     17. SCRIPTS
+============================================================ -->
 
 <script src="js/app.js"></script>
 
-
-<script type="module"
-src="js/invitation.js"></script>
+<script type="module" src="js/invitation.js"></script>
 
 <script src="js/wishes.js"></script>
 

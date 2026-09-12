@@ -33,7 +33,12 @@ const invitation = {
     theme: "",
     gallery: [],
     texts: {},
-    visibility: {}
+    visibility: {},
+
+    /* 🔥 Dynamic Images */
+    wishScreenImage: "",
+    heroImage: "",
+    mainInvitationImage: ""
 
 };
 
@@ -126,6 +131,9 @@ try {
     window.invitationTitle = invitation.title;
     window.invitationFamily = invitation.family;
 
+    /* 🔥 Global साठी */
+    window.invitation = invitation;
+
     console.log("Invitation Loaded", invitation);
 
 }
@@ -172,6 +180,32 @@ if(mainCard && invitation.theme){
     mainCard.style.borderRadius = "25px";
     mainCard.style.border = "2px solid #d4af37";
     mainCard.style.boxShadow = "0 0 40px rgba(255,215,0,.3)";
+}
+
+/* ==========================================================
+   🔥 DYNAMIC IMAGES LOAD - Admin मधून
+   (Wish Screen, Hero, Main Invitation)
+========================================================== */
+
+/* 🔥 1. Wish Screen Image */
+const wishGanpatiImg = document.querySelector(".wishGanpati");
+if(wishGanpatiImg && invitation.wishScreenImage){
+    wishGanpatiImg.src = invitation.wishScreenImage;
+    console.log("✅ Wish Screen Image Loaded:", invitation.wishScreenImage);
+}
+
+/* 🔥 2. Hero Page Image */
+const heroGanpatiImg = document.querySelector(".heroGanpati");
+if(heroGanpatiImg && invitation.heroImage){
+    heroGanpatiImg.src = invitation.heroImage;
+    console.log("✅ Hero Image Loaded:", invitation.heroImage);
+}
+
+/* 🔥 3. Main Invitation Image */
+const mainGanpatiImg = document.getElementById("ganpatiImg");
+if(mainGanpatiImg && invitation.mainInvitationImage){
+    mainGanpatiImg.src = invitation.mainInvitationImage;
+    console.log("✅ Main Invitation Image Loaded:", invitation.mainInvitationImage);
 }
 
 /* ===========================
@@ -388,7 +422,6 @@ function applyEventDateVisibility(visible){
 
 /* ==========================================
    Open Invitation Button — Music Auto Play
-   (Default Fallback सह)
 ========================================== */
 
 const openBtn = document.getElementById("openInvitation");
@@ -420,15 +453,10 @@ if (openBtn) {
         const musicBtn = document.getElementById("musicBtn");
         const voiceOver = document.getElementById("voiceOver");
 
-        /* ============================================================
-           🔥 DEFAULT MUSIC PATHS (तुमच्या assets/music/ folder मधून)
-        ============================================================ */
-
-        // 🔥 तुमच्या actual file नावांनुसार
+        /* 🔥 DEFAULT MUSIC PATHS */
         const DEFAULT_BG_MUSIC = "assets/music/bg.mp3";
-        const DEFAULT_VOICE_OVER = "assets/voice/voiceover.mp3";  // जर असेल तर
+        const DEFAULT_VOICE_OVER = "assets/voice/voiceover.mp3";
 
-        // Admin मधून Music URLs
         let bgMusicUrl = "";
         let voiceOverUrl = "";
 
@@ -437,17 +465,11 @@ if (openBtn) {
             voiceOverUrl = invitation.music.voiceOver || "";
         }
 
-        // 🔥 जर Admin मध्ये URL नसेल तर Default वापरा
         if (!bgMusicUrl || bgMusicUrl.trim() === "" || !bgMusicUrl.startsWith("http")) {
             bgMusicUrl = DEFAULT_BG_MUSIC;
             console.log("⚠️ Using Default Background Music:", DEFAULT_BG_MUSIC);
         }
 
-        /* ============================================================
-           🔥 Voice Over
-        ============================================================ */
-
-        // Voice Over URL check (जर Admin मधून नसेल तर skip)
         const hasVoiceOver = 
             voiceOver && 
             voiceOverUrl && 
@@ -465,7 +487,6 @@ if (openBtn) {
             }).catch((error) => {
                 console.log("❌ Voice Over Failed:", error.message);
                 
-                // Voice fail झाला तर Background Music Play करा
                 if (bgMusic && bgMusicUrl) {
                     bgMusic.src = bgMusicUrl;
                     bgMusic.volume = 0.5;
@@ -483,7 +504,6 @@ if (openBtn) {
                 }
             });
 
-            // Voice संपल्यावर Background Music सुरू करा
             voiceOver.onended = () => {
                 if (bgMusic && bgMusicUrl) {
                     bgMusic.src = bgMusicUrl;
@@ -503,10 +523,6 @@ if (openBtn) {
             };
 
         } else {
-            
-            /* ============================================================
-               🔥 Voice Over नसल्यास Direct Background Music
-            ============================================================ */
             
             console.log("⚠️ Voice Over URL नाही — Direct Background Music");
             
@@ -1054,14 +1070,11 @@ window.openLetterGanpati = function() {
     if (letterOpenedGanpati) return;
     letterOpenedGanpati = true;
 
-    // Background music बंद करा
     var bgMusic = document.getElementById("bgMusic");
     if (bgMusic) bgMusic.pause();
 
-    // Envelope opening animation
     letterEnvelope.classList.add("envelopeOpeningGanpati");
 
-    // Envelope नंतर letter दाखवा
     setTimeout(function() {
 
         letterEnvelope.style.display = "none";
@@ -1069,7 +1082,6 @@ window.openLetterGanpati = function() {
         letterCard.style.display = "block";
         letterCard.classList.remove("hidden");
 
-        // Voiceover सुरू करा
         var voiceOver = document.getElementById("voiceOverShubhechha");
         if (voiceOver) {
             voiceOver.currentTime = 0;
@@ -1090,25 +1102,21 @@ window.closeLetterGanpati = function() {
 
     letterOpenedGanpati = false;
 
-    // Voiceover बंद करा
     var voiceOver = document.getElementById("voiceOverShubhechha");
     if (voiceOver) {
         voiceOver.pause();
         voiceOver.currentTime = 0;
     }
 
-    // Letter लपवा
     if (letterCard) {
         letterCard.style.display = "none";
     }
 
-    // Envelope पुन्हा दाखवा
     if (letterEnvelope) {
         letterEnvelope.style.display = "flex";
         letterEnvelope.classList.remove("envelopeOpeningGanpati");
     }
 
-    // Background music सुरू करा
     var bgMusic = document.getElementById("bgMusic");
     if (bgMusic) bgMusic.play().catch(function() {});
 
@@ -1116,29 +1124,43 @@ window.closeLetterGanpati = function() {
 
 
 /* =========================================================
-   VOICEOVER SETUP
+   SHUBHECHHA VOICE SETUP
 ========================================================= */
 
 window.addEventListener("load", function() {
 
     var voiceOver = document.getElementById("voiceOverShubhechha");
 
-    if (voiceOver) {
-
-        voiceOver.src = "assets/voice/shubhechha.mp3";
-        voiceOver.preload = "auto";
-        voiceOver.volume = 1;
-
-        voiceOver.addEventListener("play", function() {
-            var bgMusic = document.getElementById("bgMusic");
-            if (bgMusic) bgMusic.pause();
-        });
-
-        voiceOver.addEventListener("ended", function() {
-            var bgMusic = document.getElementById("bgMusic");
-            if (bgMusic) bgMusic.play().catch(function() {});
-        });
-
+    if (!voiceOver) {
+        console.warn("Shubhechha audio element not found!");
+        return;
     }
+
+    /* 🔥 Admin मधून URL घ्या, नाहीतर default वापरा */
+    var voiceUrl = "assets/voice/shubhechha.mp3";
+
+    if (
+        window.invitation &&
+        window.invitation.music &&
+        window.invitation.music.shubhechhaVoice
+    ) {
+        voiceUrl = window.invitation.music.shubhechhaVoice;
+    }
+
+    voiceOver.src = voiceUrl;
+    voiceOver.preload = "auto";
+    voiceOver.volume = 1;
+
+    console.log("✅ Shubhechha Voice loaded:", voiceUrl);
+
+    voiceOver.addEventListener("play", function() {
+        var bgMusic = document.getElementById("bgMusic");
+        if (bgMusic) bgMusic.pause();
+    });
+
+    voiceOver.addEventListener("ended", function() {
+        var bgMusic = document.getElementById("bgMusic");
+        if (bgMusic) bgMusic.play().catch(function() {});
+    });
 
 });

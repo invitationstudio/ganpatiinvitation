@@ -2386,7 +2386,9 @@ inset 0 -3px 8px rgba(0,0,0,.2);
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: -150px;       /* 🔥 Gap खूप कमी */
+    
+    /* 🔥 Letter आणि Map मध्ये Gap */
+    margin-bottom: 60px;         /* आधी -150px होता (चिकटलेले), आता +60px */
 }
 
 /* Envelope */
@@ -2563,8 +2565,13 @@ inset 0 -3px 8px rgba(0,0,0,.2);
     margin-left: -45px;
 }
 
+/* ==========================================================
+   CLOSE BUTTON - Letter च्या जवळ
+========================================================== */
+
 .secondaryButtonGanpati {
-    margin-top: 25px;
+    display: block;
+    margin: 15px auto 0 auto;
     width: 180px;
     height: 48px;
     border: 1px solid #d5b45c;
@@ -2575,9 +2582,8 @@ inset 0 -3px 8px rgba(0,0,0,.2);
     letter-spacing: 2px;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-left: 90px;
+    margin-left:100px;
 }
-
 .secondaryButtonGanpati:hover {
     background: rgba(213, 180, 92, 0.1);
 }
@@ -2663,7 +2669,7 @@ inset 0 -3px 8px rgba(0,0,0,.2);
         height: 44px;
         font-size: 11px;
         margin-top: 20px;
-        margin-left: 5px;
+        margin-left: 40px;
     }
 
 }
